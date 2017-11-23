@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Edit a Match</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="localStyle.css">
+</head>
+<body class="">
+
+    <!-- Navbar content -->
+    <nav class="text-white bg-primary">
+        <div class="container">
+            <div class="row justify-content-between pt-3">
+                <a href="login.html" class="col-3 text-center middle"><button type="button" class="btn btn-secondary btn-sm">Logout</button></a>
+                <div class="col-auto text-center d-none d-sm-block py-3"><span class="h1">Team XYZ</span></div>
+                <div class="col-auto text-center d-block d-sm-none py-3"><span class="h3">Team XYZ</span></div>
+                <a href="addGame.html" class="col-3 text-center middle"><button type="button" class="btn btn-secondary btn-sm">+</button></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <a href="homepage.html" class="tab col-3 text-center py-3 text-white">Home</a>
+                <a href="gameSchedule.html" class="tab col-3 text-center py-3">Game</a>
+                <a href="viewPlayers.html" class="tab col-3 text-center py-3">Player</a>
+                <a href="viewGameStats.html" class="tab col-3 text-center py-3">Manage</a>
+            </div>
+        </div>
+    </nav>
+    <!--End Navbar-->
+
+<div class="container justify-content-center">
+    <div class="row justify-content-center py-2">
+        <h3>Edit Match</h3>
+    </div>
+    <form>
+        <div class="form-group">
+            <div class="row justify-content-center">
+                <div class="col-4 text-right">
+                    <label for="opponent">Opponent</label>
+                </div>
+                <div class="col-8 text-left">
+                    <input type="text" class="form-control" id="opponent" placeholder="First Name">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row justify-content-center">
+                <div class="col-4 text-right">
+                    <label for="datetime">Date/Time</label>
+                </div>
+                <div class="col-8 text-left">
+                    <input type="datetime-local" class="form-control" id="datetime" placeholder="First Name">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row justify-content-center">
+                <div class="col-4 text-right">
+                    <label for="location">Location</label>
+                </div>
+                <div class="col-8 text-left">
+                    <input type="text" class="form-control" id="location" placeholder="First Name">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row justify-content-center">
+                <div class="col-4 text-right">
+                    Status
+                </div>
+                <div class="col-8 text-left">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" checked>
+                            Home
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio">
+                            Away
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <a href="gameSchedule.html"><button type="button" class="btn btn-primary">Save Changes</button></a>
+        </div>
+        <div class="row justify-content-center">
+            <a href="gameSchedule.html"><button type="button" class="btn btn-danger mt-2">Delete Match</button></a>
+        </div>
+
+
+    </form>
+</div>
+
+<!--Bootstrap Scripts-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>

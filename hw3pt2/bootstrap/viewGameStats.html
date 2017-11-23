@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>View Game Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="localStyle.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="text-white bg-primary">
+        <div class="container">
+            <div class="row justify-content-between pt-3">
+                <a href="login.html" class="col-3 text-center middle"><button type="button" class="btn btn-secondary btn-sm">Logout</button></a>
+                <div class="col-auto text-center d-none d-sm-block py-3"><span class="h1">Team XYZ</span></div>
+                <div class="col-auto text-center d-block d-sm-none py-3"><span class="h3">Team XYZ</span></div>
+                <a href="#" class="col-3 text-center middle invisible"><button type="button" class="btn btn-secondary btn-sm">+</button></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <a href="homepage.html" class="tab col-3 text-center py-3 text-white">Home</a>
+                <a href="gameSchedule.html" class="tab col-3 text-center py-3">Game</a>
+                <a href="viewPlayers.html" class="tab col-3 text-center py-3">Player</a>
+                <a href="viewGameStats.html" class="tab col-3 text-center py-3">Manage</a>
+            </div>
+        </div>
+    </nav>
+    <!--End Navbar-->
+    <h1 style="text-align: center">Team Sad vs Team XYZ</h1>
+    <h2 style="text-align: center">W 3 : 1 L</h2>
+    <h3 style="text-align: center">Foul</h3>
+    <div class="progress" style="text-align: center">
+        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0"
+            aria-valuemax="4" style="width:25%">
+            <span style="position:absolute; width:100%; left:0; color: black">1 v 4</span>
+        </div>
+    </div>
+    <h3 style="text-align: center">Red Card</h3>
+    <div class="progress" style="text-align: center">
+        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0"
+            aria-valuemax="3" style="width:33%">
+            <span style="position:absolute; width:100%; left:0; color: black">1 v 2</span>
+        </div>
+    </div>
+    <h3 style="text-align: center">Yellow Card</h3>
+    <div class="progress" style="text-align: center">
+        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0"
+            aria-valuemax="3" style="width:33%">
+            <span style="position:absolute; width:100%; left:0; color: black">1 v 2</span>
+        </div>
+    </div>
+    <h3 style="text-align: center">Shots on Goal</h3>
+    <div class="progress" style="text-align: center">
+        <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0"
+            aria-valuemax="10" style="width:50%">
+            <span style="position:absolute; width:100%; left:0; color: black">5 v 5</span>
+        </div>
+    </div>
+    <h3 style="text-align: center">Goals</h3>
+    <div class="progress" style="text-align: center">
+        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0"
+            aria-valuemax="3" style="width:33%">
+            <span style="position:absolute; width:100%; left:0; color: black">1 v 2</span>
+        </div>
+    </div>
+    <h3 style="text-align: center">Corner Kicks</h3>
+    <div class="progress" style="text-align: center">
+        <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0"
+            aria-valuemax="10" style="width:40%">
+            <span style="position:absolute; width:100%; left:0; color: black">4 v 6</span>
+        </div>
+    </div>
+    <h3 style="text-align: center">Goal Kicks</h3>
+    <div class="progress" style="text-align: center">
+        <div class="progress-bar" role="progressbar" aria-valuenow="7" aria-valuemin="0"
+            aria-valuemax="10" style="width:70%">
+            <span style="position:absolute; width:100%; left:0; color: black">7 v 3</span>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row justify-content-center">
+            <a href="editGameStats.html"><button type="button" class="btn btn-primary">Edit</button></a>
+        </div>
+    </div>
+</body>
+</html>

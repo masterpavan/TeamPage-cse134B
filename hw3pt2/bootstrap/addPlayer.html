@@ -1,0 +1,134 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Add Player</title>
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="localStyle.css">
+</head>
+<body>
+
+    <!-- Navbar content -->
+    <nav class="text-white bg-primary">
+        <div class="container">
+            <div class="row justify-content-between pt-3">
+                <a href="login.html" class="col-3 text-center middle"><button type="button" class="btn btn-secondary btn-sm">Logout</button></a>
+                <div class="col-auto text-center d-none d-sm-block py-3"><span class="h1">Team XYZ</span></div>
+                <div class="col-auto text-center d-block d-sm-none py-3"><span class="h3">Team XYZ</span></div>
+                <a href="#" class="col-3 text-center middle"><button type="button" class="btn btn-secondary btn-sm">+</button></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <a href="homepage.html" class="tab col-3 text-center py-3 text-white">Home</a>
+                <a href="gameSchedule.html" class="tab col-3 text-center py-3">Game</a>
+                <a href="viewPlayers.html" class="tab col-3 text-center py-3">Player</a>
+                <a href="viewGameStats.html" class="tab col-3 text-center py-3">Manage</a>
+            </div>
+        </div>
+    </nav>
+    <!--End Navbar-->
+
+<div class="container py-2">
+    <div class="row justify-content-center py-2">
+        <h3>Add a Player</h3>
+    </div>
+  <div class="row justify-content-center py-2">
+    <div class="col-6 text-right">
+      <img src="../../res/placeholder.png" class="rounded-circle" alt="player pic" height="100" width="100">
+    </div>
+    <div class="col-6 middle">
+      <button type="button" class="btn btn-primary" id="photo">Add Photo</button>
+    </div>
+  </div>
+  <form>
+    <div class="form-group">
+      <div class="row justify-content-center">
+        <div class="col-4 text-right">
+          <label for="firstName">First Name</label>
+        </div>
+        <div class="col-8">
+          <input type="text" class="form-control" id="firstname" placeholder="First Name">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row justify-content-center">
+        <div class="col-4 text-right">
+          <label for="lastName">Last Name</label>
+        </div>
+        <div class="col-8">
+          <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row justify-content-center">
+        <div class="col-4 text-right">
+          <label for="email">Email</label>
+        </div>
+        <div class="col-8">
+          <input type="email" class="form-control" id="email"placeholder="Enter email">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row justify-content-center">
+        <div class="col-4 text-right">
+          <label for="DOB">DOB</label>
+        </div>
+        <div class="col-8">
+          <input type="date" class="form-control" id="DOB">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row justify-content-center">
+        <div class="col-4 text-right">
+          <label for="Jersey">Jersey Number</label>
+        </div>
+        <div class="col-8">
+          <input type="number" class="form-control" id="jersey" placeholder="Jersey Number">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row justify-content-center">
+        <div class="col-4 text-right">
+          <label for="position">Position</label>
+        </div>
+        <div class="col-8">
+          <select class="form-control" id="position">
+            <option>Goalkeeper</option>
+            <option>Defender</option>
+            <option>Midfielder</option>
+            <option>Forward</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row justify-content-center">
+        <div class="col-4 text-right">
+          <label for="selectCaptain">Captain</label>
+        </div>
+        <div class="col text-center">
+          <input type="checkbox" id="selectCaptain" class="form-check-input">
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+        <a href="viewPlayers.html"><button type="button" class="btn btn-primary">Add a Player</button></a>
+    </div>
+  </form>
+</div>
+
+<!--Bootstrap Scripts-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>

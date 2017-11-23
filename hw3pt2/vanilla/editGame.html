@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Edit a Match</title>
+
+    <link rel="stylesheet" href="localcss.css">
+</head>
+<body class="">
+
+<!--Navbar-->
+<nav>
+    <div class="container" align="center">
+        <div class="topbar">
+            <a href="login.html"><button class="btn">Logout</button></a>
+            <a href="#"><button class="btn invisible">Add</button></a>
+        </div>
+        <div class="row">
+            <h1 style="margin: -2rem 0 0 0">Team XYZ</h1>
+        </div>
+        <div class="row">
+            <ul>
+                <li><a href="homepage.html">Home</a></li
+                ><li><a href="gameSchedule.html">Game</a></li
+            ><li><a href="viewPlayers.html">Player</a></li
+            ><li><a href="viewGameStats.html">Manage</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--End Navbar-->
+<div class="container top-space" style="text-align: center">
+    <div class="row">
+        <h2>Edit Match</h2>
+    </div>
+
+    <div class="row">
+        <form action="">
+            <div class="form-item centered">
+                <label>Opponent</label>
+                <input type="text" placeholder="Enter Opponent Team Name">
+            </div>
+            <div class="form-item centered">
+                <label>Date/Time</label>
+                <input type="datetime-local" id="datetime">
+            </div>
+            <div class="form-item centered">
+                <label>Location</label>
+                <input type="text"id="location" placeholder="Location">
+            </div>
+            <label>Status</label><br>
+            <input class="form-check-input" type="radio" checked>Home <br>
+            <input class="form-check-input" type="radio">Away
+        </form>
+        <br>
+        <a href="gameSchedule.html"><button type="button" class="btn">Save Changes</button></a>
+        <a href="gameSchedule.html"><button type="button" class="btnD">Delete Match</button></a>
+
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+.nav-active {
+    background-color: #2188ff;
+}
+
+.tab {
+    color: white;
+}
+
+.tabletab {
+    color: white;
+    display: block;
+    padding: inherit;
+    background-color: #0275d8;
+    border-radius: .25rem;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.73);
+}
+
+.tabletab:hover {
+    background-color: #2188ff;
+    text-decoration: none;
+    color: white;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.tab:hover {
+    background-color: #2188ff;
+    text-decoration: none;
+    color: white;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.middle {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+

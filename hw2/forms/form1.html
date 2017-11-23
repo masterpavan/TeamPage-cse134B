@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ordering Soccer Uniforms</title>
+</head>
+<body>
+<nav>
+    <a href="../../hw2.html">Go back to the table of contents</a>
+    <a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fhw2-cse134b-40899.firebaseapp.com%2Fhw2%2Fforms%2Fform1.html">Link to validator</a>
+    <br>
+    <a href="form2.html">Or check out the other form</a>
+    <hr>
+</nav>
+    <form method="post" enctype="application/x-www-form-urlencoded" oninput="cost.value= price.valueAsNumber * number.valueAsNumber">
+    <p><label>Player name: <input name="playname" required></label></p>
+    <p><label>Telephone: <input type=tel name="telephone" size="9"></label></p>
+    <p><label>E-mail: <input type=email name="email" required></label></p>
+    <fieldset>
+        <legend>Shirt Size</legend>
+        <p><label><input type=radio name=size required value="small">Small</label></p>
+        <p><label><input type=radio name=size required value="medium">Medium</label></p>
+        <p><label><input type=radio name=size required value="large">Large</label></p>
+    </fieldset>
+    <p><label>Color: <input type="color" name="color"></label></p>
+    <fieldset>
+        <legend>Add-ons</legend>
+        <p><label><input type=checkbox>Club Name ($2)</label></p>
+        <p><label><input type=checkbox>Player Last Name ($1)</label></p>
+        <p><label><input type=checkbox>Signature ($10)</label></p>
+    </fieldset>
+    <p><label>Image Link to Design: <input type="url" name="url"></label></p>
+    <p><label>Or Upload an Image: <input type="file" name="file" multiple accept="image/*"></label></p>
+    <p><label>Number of Jerseys: <input type="number" name="number" required value="1" min="1" max ="100"></label></p>
+    <p><label>Jerseys Sold v Jerseys Left: <meter value="70" max="100"></meter></label></p>
+    <p><label>How much would you be willing to pay (in dollars) for the jerseys? : <input type="range" name="price"></label></p>
+    <p><label>Total cost: <output for ="number price" name="cost"></output></label></p>
+    <p><label>Preferred delivery date: <input type="date" min="2017-10-22"></label></p>
+    <p><label>Preferred delivery time: <input type="time" min="11:00" 
+        max="21:00" step="900">
+       </label></p>
+    <p><label>Delivery Address: <textarea name="Address" maxlength="500" required></textarea></label></p>
+    <p><input type="reset" value="Reset"></p>
+    <p><input type="submit" value="Submit"></p>
+    </form>
+</body>
+</html>

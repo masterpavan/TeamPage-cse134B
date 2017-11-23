@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Attributes</title>
+    <style>
+        div {
+            background-color: #ECEFF1;
+            border: 1px solid black;
+            padding: 0.5%;
+            font-family: Roboto;
+        }
+    </style>
+    <script>
+        function log(eventname) {
+            console.log("event: " + eventname + " was fired.");
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <a href="../hw2.html">Go back to the table of contents</a>
+    <a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fhw2-cse134b-40899.firebaseapp.com%2Fhw2%2Fevent-attributes.html">Link to validator</a>
+    <hr>
+</nav>
+<h1>Open the console to see the events that are fired.</h1>
+<div>
+    <h2>onblur</h2>
+    <p>Click on this input field and click away to fire the onblur event</p>
+    <input type="text" onblur="log('onblur')">
+</div>
+
+<div>
+    <h2>onchange</h2>
+    <p>select a different option to fire the onchange event</p>
+    <select onchange="log('onchange')">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+    </select>
+</div>
+
+<div>
+    <h2>onclick</h2>
+    <p>click this button to fire the onclick event</p>
+    <button onclick="log('onclick')">Click meeee</button>
+</div>
+
+<div>
+    <h2>ondblclick</h2>
+    <p>double click this button to fire the onclick event</p>
+    <button ondblclick="log('ondoubleclick')">Click me twice</button>
+</div>
+
+<div onerror="log('onerror')">
+    <h2>onerror</h2>
+    <img src="wut.png" onerror="log('onerror')" alt="Tried to load an image here. The onerror event was fired.">
+</div>
+
+<div>
+    <h2>onfocus</h2>
+    <p>click on the form field below to fire the on focus event</p>
+    <input type="text" onfocus="log('onfocus')">
+</div>
+
+<div oninput="log('oninput')">
+    <h2>oninput</h2>
+    <p>type something in the form below to fire the oninput event</p>
+    <input type="text" oninput="log('oninput')">
+</div>
+
+<div >
+    <h2>oninvalid</h2>
+    <p>click submit without typing anything to fire the oninvalid event</p>
+    <form>
+        <input type="text" oninvalid="log('oninvalid')" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div>
+    <h2>onkeydown</h2>
+    <p>hold down a keyboard key in the form below to fire the onkeydown event</p>
+    <input type="text" onkeydown="log('onkeydown')">
+</div>
+
+<div>
+    <h2>onkeypress</h2>
+    <p>press a keyboard key in the form below to fire the onkeypress event</p>
+    <input type="text" onkeypress="log('onkeypress')">
+</div>
+
+<div>
+    <h2>onkeyup</h2>
+    <p>press and release a keyboard key in the form below to fire the onkeyup event</p>
+    <input type="text" onkeyup="log('onkeyup')">
+</div>
+
+<div>
+    <h2>onload</h2>
+    <p>if you can see the image below, the onload event was fired</p>
+    <img src="../res/soccerball.png" onload="log('onload')" alt="an image of a soccer ball goes here"/>
+</div>
+
+<div onmousedown="log('onmousedown')">
+    <h2>onmousedown</h2>
+    <p>press anywhere inside this area to fire the onmousedown event</p>
+</div>
+
+<div onmouseenter="log('onmouseenter')">
+    <h2>onmouseenter</h2>
+    <p>drag your mouse inside this area to fire the onmouseenter event</p>
+</div>
+
+<div onmouseleave="log('onmouseleave')">
+    <h2>onmouseleave</h2>
+    <p>drag your mouse into and then out of this area to fire the onmouseleave event</p>
+</div>
+
+<div onmousemove="log('onmousemove')">
+    <h2>onmousemove</h2>
+    <p>move your mouse in this area to fire the onmousemove event</p>
+</div>
+
+<div onmouseout="log('onmouseout')">
+    <h2>onmouseout</h2>
+    <p>drag your mouse into and then out of this area to fire the onmouseout event</p>
+</div>
+
+<div onmouseover="log('onmouseover')">
+    <h2>onmouseover</h2>
+    <p>drag your mouse into this area to fire the onmouseover event</p>
+</div>
+
+<div onwheel="log('onwheel')">
+    <h2>onwheel</h2>
+    <p>use your mouse wheel in this area to fire the onwheel event</p>
+</div>
+
+<div>
+    <h2>onreset</h2>
+    <p>click the reset button below to fire the onreset event</p>
+    <form onreset="log('onreset')">
+        <input type="text">
+        <input type="reset" >
+    </form>
+</div>
+
+<div style="height: 140px;overflow: scroll" onscroll="log('onscroll')">
+    <h2>onscroll</h2>
+    <p>scroll this area to fire the onscroll event</p>
+    <p>
+        Upper 90 three-five-two center-half World Cup yellow
+        card African Cup of Nations midfielder ball one-two
+        four-four-two striker goal pitch referee halftime.
+        Midfielder UEFA European Championship brace upper 90
+        goalie center-half red card striker African Cup of
+        Nations referee goal three-five-two World Cup.
+        Four-four-two yellow card number 10 brace red card
+        three-five-two pitch defender soccer one-two goalie
+        African Cup of Nations striker referee ball. Center-half
+        halftime pitch red card defender four-four-two hat
+        trick number 10 upper 90 referee striker World Cup
+        midfielder African Cup of Nations. Soccer forward
+        number 10 World Four-four-two soccer African Cup of
+        Nations chip brace UEFA European Championship yellow
+        card number 10 referee pitch defender goalie hat trick.
+        Referee center-half UEFA European Championship upper
+        90 brace yellow card defender forward hat trick
+        midfielder striker number 10 pitch goal chip four-four-two.
+        Striker UEFA European Championship midfielder defender
+        forward red card African Cup of Nations three-five-two
+        number 10 soccer brace pitch ball upper 90. Center-half
+        three-five-two African Cup of Nations World Cup hat
+        trick referee UEFA European Championship goal halftime
+        defender yellow card number 10.
+    </p>
+</div>
+
+<div>
+    <h2>onselect</h2>
+    <p>select the text below to fire the onselect event</p>
+    <input type="text" value="Soccer!" onselect="log('onselect')">
+</div>
+
+<div onsubmit="log('onsubmit')">
+    <h2>onsubmit</h2>
+    <p>click on the submit button to fire the onsubmit event</p>
+    <form>
+        <input type="submit">
+    </form>
+</div>
+
+</body>
+</html>

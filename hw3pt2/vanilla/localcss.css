@@ -1,0 +1,241 @@
+:root {
+    --primary-color: #0275d8;
+}
+
+body, html{
+    margin: 0;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row ul {
+    -list-style-type: none;
+    padding: 0;
+}
+
+.row ul li {
+    display: inline-block;
+    text-align: center;
+}
+
+.btn {
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    background-color: #0275d8;
+    color: white;
+    text-decoration: none;
+    border: 1px solid transparent;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.btnD {
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    background-color: #d9534f;
+    color: white;
+    text-decoration: none;
+    border: 1px solid transparent;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {background-color: #2188ff;}
+.btnD:hover {background-color: #c9302c;}
+
+/*Nav*/
+
+.topbar {display: flex; justify-content: space-between; color:white;}
+.topbar button {
+    background-color: #1995FF;
+    color: white;
+    text-decoration: none;
+    padding: .25rem .5rem;
+}
+
+nav {
+    color: white;
+    background-color: var(--primary-color);
+    padding: 1rem 0 0 0;
+}
+nav h1 {
+    font-size: 2vw;
+}
+nav ul {
+    -list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    display: inline-block;
+    font-size: 1vw;
+}
+nav ul li a {
+    color: white;
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav ul li a:hover { background-color: #2188ff; }
+@media (max-width: 1900px) {
+    nav h1 { font-size: 3vw; }
+    nav ul li { font-size: 2vw; }
+}
+@media (max-width: 900px) {
+    nav h1 { font-size: 7vw; }
+    nav ul li { font-size: 3vw; }
+}
+@media (max-width: 575px) {
+    nav h1 { font-size: 10vw; }
+    nav ul li { font-size: 5vw; }
+}
+
+/*EndNav*/
+
+.cont {
+    text-align: center;
+}
+
+.form-item {
+    width: 70vw;
+    margin-bottom: 15px;
+}
+
+.form-item label {
+    display: inline-block;
+    width:100%;
+    text-align: left;
+}
+
+.form-item input{
+    display: inline-block;
+    width: 100%;
+}
+
+.form-item select {
+    display: inline-block;
+    width: 100%;
+}
+
+input {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+select {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.middled {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.profile {
+    width: 100%;
+    border-radius: 100%;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.top-space { padding-top: 1rem!important; }
+.left-space { padding-left: 1rem!important; }
+.right-space { padding-right: 1rem!important; }
+.bottom-space {padding-bottom: 1rem!important; }
+
+.display {
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+
+
+.table {
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #eceeef;
+}
+
+.tabletab {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: inherit;
+    background-color: #0275d8;
+    border-radius: .25rem;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.73);
+}
+
+.tabletab:hover {
+    background-color: #2188ff;
+    text-decoration: none;
+    color: white;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.barItem {
+    background-color: #e8e8e8;
+    border: 1px solid #cbcbcb;
+    margin: 30px auto;
+    width: 70vw;
+}
+.barItem .innerbar {
+    background-color: #0275d8;
+    height: 1.5rem;
+}
+.barItem .outerbar {
+    background-color: #d9534f;
+}
+.barItem span {
+    display: block;
+    margin-top: -1.5rem;
+    color: white;
+    font-weight: bold;
+}
+.barItem button {
+    font-weight: bold;
+    margin: 5px;
+}
+.barItem .editBtns {
+    margin-top: 3px;
+    display: flex;
+    justify-content: space-between;
+}

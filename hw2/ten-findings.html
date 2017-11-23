@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ten Findings</title>
+</head>
+<body>
+<nav>
+    <a href="../hw2.html">Go back to the table of contents</a>
+    <a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fhw2-cse134b-40899.firebaseapp.com%2Fhw2%2Ften-findings.html">Link to validator</a>
+    <hr>
+</nav>
+<p>Ten Findings</p>
+<ol reversed="reversed">
+    <li>Mathml for math rendering doesn't work in Chrome, but it works in other browsers.</li>
+    <li>Under edits, we don't really understand why del and ins exist. Why do they exist when we can just delete and put in what we want ourselves if the deletion isn't going to show up anyway.</li>
+    <li>We thought dir would change the direction of the text, but in reality it changes the location of where they are.</li>
+    <li>We never heard about a ruby tag before that let's us annotate what certain words in Japanese mean.</li>
+    <li>Image maps are cool. Being able to make certain parts of an image be a link is really interesting.</li>
+    <li>
+        When allowing users to only upload images in a form by specifying "accept=image/*", Microsoft Edge allows the upload of any file types. Chrome on the other hand
+        actually limits the user to only be able to upload images.
+    </li>
+    <li>
+        The reversed attribute for ordered lists does not work in Microsoft Edge, it stays numbered 1-10. It does
+        however, work in Chrome and this list becomes ordered from 10-1.
+    </li>
+    <li>
+        The output attribute for forms doesn't correctly do the math calculation between two input fields.
+        It outputs a NaN instead of the actual answer. Chrome, however, does do this calculation correctly and outputs the correct number.
+    </li>
+    <li>
+        For some reason, alot of deprecated tags still work in many modern browsers such as strike and u, but others don't work. It's hard to tell which are supported and which are not without trying
+        so it's best not to use them.
+    </li>
+    <li>
+        For inputting time in forms and putting constraints on the available times to pick, Chrome doesn't support the constraints and allows any time to be selected. Edge, on the other hand only allows us
+        to pick a time that is valid. This was the one instance we found so far where Edge supported a feature that Chrome didn't.
+    </li>
+</ol>
+</body>
+</html>

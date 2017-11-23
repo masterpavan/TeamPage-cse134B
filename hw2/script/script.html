@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Script</title>
+</head>
+<body>
+<script src="testScript.js" type="text/javascript" charset="UTF-8" async></script>
+<noscript><p>Scripting is disabled. There will be no logs to the console.</p></noscript>
+<nav>
+    <a href="../../hw2.html">Go back to the table of contents</a>
+    <a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fhw2-cse134b-40899.firebaseapp.com%2Fhw2%2Fscript%2Fscript.html">Link to validator</a>
+    <hr>
+</nav>
+<h2>Check the console for more scripting</h2>
+<button onclick="drawBall()">Draw a soccer ball</button>
+<br>
+<button onclick="create()">Create a template element</button>
+<br>
+<canvas id="soccerball" width="200" height="200" style="border: 1px solid black">
+whut
+</canvas>
+<br>
+<div id="container"></div>
+
+<template>
+    <div></div>
+</template>
+
+
+<script>
+    function create() {
+        var template = document.querySelector('template');
+        var div = template.content.querySelector('div');
+        div.textContent = "Hey im a template element";
+        document.querySelector('#container').appendChild(
+            document.importNode(template.content, true));
+    }
+
+    function drawBall() {
+        var canvas = document.getElementById("soccerball");
+        var ctx = canvas.getContext("2d");
+        var img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+        };
+        img.src = "../../res/soccerball.png";
+
+    }
+
+</script>
+
+</body>
+</html>

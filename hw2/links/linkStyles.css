@@ -1,0 +1,15 @@
+nav {
+    color: red;
+    font-weight: bold;
+    font-family: Roboto;
+}
+
+nav li {
+    display: inline;
+}
+
+
+
+h1, h2, h4, ul {
+    font-family: Roboto;
+}
