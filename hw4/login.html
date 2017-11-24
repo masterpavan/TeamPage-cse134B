@@ -13,25 +13,28 @@
 
     <div class="row" style="text-align: center">
         <h1>TeamWatch</h1><br>
-        <img src="../../res/soccerball.png" alt="">
+        <img src="../res/soccerball.png" alt="">
     </div>
 
     <div class="row">
-        <form action="">
+        <form id="loginForm" action="">
             <div class="form-item centered">
-                <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Username">
+                <label for="userEmail">Username</label>
+                <input type="text" class="form-control" id="userEmail" placeholder="Enter Username" required>
             </div>
             <div class="form-item centered">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="userPass">Password</label>
+                <input type="password" class="form-control" id="userPass" placeholder="Password" required>
             </div>
         </form>
     </div>
     <div class="row" style="text-align: center">
-        <a href="homepage.html"><button type="button" class="btn btn-primary">Sign In</button></a>
+        <a id="toHomepage" href="homepage.html"></a><button id="signIn" type="button" class="btn btn-primary">Sign In</button>
         <a href="signUp.html"><button type="button" class="btn btn-primary">Sign Up</button></a>
     </div>
+    <div id="errorSpace" class="row">
+    </div>
 </div>
+<script src="js/login.js"></script>
 </body>
 </html>

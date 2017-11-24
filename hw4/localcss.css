@@ -239,3 +239,12 @@ input[type="submit"] {
     display: flex;
     justify-content: space-between;
 }
+
+blockquote {
+    margin: 1em auto;
+    width: 70vw;
+    padding: 1rem;
+    text-align: center;
+    background-color: lightpink;
+    border: 1px solid darkgoldenrod;
+}
