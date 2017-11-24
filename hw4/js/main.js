@@ -24,7 +24,10 @@ class Team {
             teamStats: this.teamStats
         };
         window.localStorage.setItem("Team", JSON.stringify(teamJSON));
+        console.log("saved to database");
     }
+
+
 
 }
 
@@ -62,37 +65,106 @@ class Schedule {
     constructor(scheduleArray) {
         if(scheduleArray.length === 0) this.gamesArray = [];
         else {
-            this.gamesArray = scheduleArray.map(function (gameObject) {
-                return new Game(gameObject);
-            });
+            this.gamesArray = scheduleArray;
         }
     }
 
     //add Game
+    addGame(gameObject) {
+        if(this.gamesArray.length === 0) {
+            this.gamesArray.push(gameObject);
+            console.log('initialized first game');
+        }
+        for (let i = 0; i < this.gamesArray.length; i++) {
+            if (this.gamesArray[i].date < gameObject.date) {
+                this.gamesArray.splice(i + 1, 0, gameObject);
+                console.log(`spliced a game in the ${i}th position`);
+                return;
+            }
+        }
+        this.gamesArray.splice(0, 0, gameObject);
+        console.log(`spliced a game in the 0th position`);
+    }
+
     //find Game
+    findGameIndex(id) {
+        for(let i = 0; i < this.gamesArray.length; i++) {
+            if(this.gamesArray[i].id === id
+                && this.gamesArray[i].removed === false) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     //remove Game
+    removeGame(id) {
+        let index = this.findGameIndex(id);
+        if(index !== -1) this.gamesArray[index].removed = true;
+    }
+
     //update Game
+    updateGame(id, gameObject) {
+        let index = this.findGameIndex(id);
+        if(index !== -1) this.gamesArray[index] = gameObject;
+    }
+
+    //get Game ID
+    getGameID(opponent, date) {
+        return `${opponent} at ${date}`.replace(/\s+/g, '');
+    }
+
+    //create a game object
+    createGameObject(opponent, date, location, homeOrAway, stats) {
+        let newID = this.getGameID(opponent,date);
+        return {
+            id: newID,
+            removed: false,
+            opponent: opponent,
+            date: date,
+            location: location,
+            homeOrAway: homeOrAway,
+            gameStats: stats
+        }
+    }
 
     getNextGame() {
         //replace this with a thing that finds the next game
         //return a game object
+        return this.gamesArray[this.gamesArray.length - 1];
+        /*
         return {
+            id: 'test',
+            removed: false,
             opponent: "Team Suck",
             date: "11/24 at 8pm",
             location: "the park",
-            homeOrAway: "Home"
+            homeOrAway: "Home",
+            gameStats: null
         }
+        */
     }
 }
 
-class Game {
-    constructor(matchObject) {
-        this.opponent = matchObject.opponent;
-        this.date = matchObject.date;
-        this.location = matchObject.location;
-        this.homeOrAway = matchObject.homeOrAway;
-        this.gameStats = matchObject.gameStats;
-    }
+//testing methods
+function initializeTeam() {
+    let teamJSON = {
+        teamName: "Team XYZ",
+        roster: [],
+        schedule: [],
+        teamStats: {
+            wins: 0, losses: 0, ties: 0, goalsFor: 0, goalsAgainst: 0
+        }
+    };
+    window.localStorage.setItem("Team", JSON.stringify(teamJSON));
+    currentTeam = new Team(teamJSON);
+    console.log("initialized the team");
+}
+
+function changeUserPrivledge(user) {
+    currentUser.userWho = user;
+    window.localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    console.log(`changed ${currentUser.username} to ${user}`);
 }
 
 //initialize the team from the database

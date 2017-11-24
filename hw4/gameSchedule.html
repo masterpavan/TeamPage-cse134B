@@ -14,7 +14,7 @@
 	<div class="container" align="center">
 		<div class="topbar">
 			<a href="login.html"><button class="btn">Logout</button></a>
-			<a href="addGame.html"><button class="btn">Add</button></a>
+			<span id="addBtn"></span>
 		</div>
 		<div class="row">
 			<h1 style="margin: -2rem 0 0 0">Team XYZ</h1>
@@ -31,37 +31,32 @@
 </nav>
 <!--End Navbar-->
 
-<div class="container top-space" align="center">
-
+<div id="gameList" class="container" align="center">
+	<div class="row"><h2>Game Schedule</h2></div>
+	<template id="gameTemplate">
+		<div class="row">
+			<strong><span id="gameHeader"></span></strong> <br>
+			<span id="date"></span> <br>
+			<span id="location"></span> <br>
+			<span id="homeOrAway"></span> <br>
+			<strong><span id="result"></span></strong>
+			<div id="buttonZone" class="top-space"></div>
+		</div>
+		<hr>
+	</template>
 	<div class="row">
-		<strong>Previous Game</strong><br>
-		10/27/17 at 8pm<br>
-		Center Hall Stadium<br>
-		vs. Team Suck<br>
-		Home Game<br>
+		<strong>[Team Name] vs. [Opponent Name]</strong><br>
+		[date]<br>
+		[location]<br>
+		[homeOrAway]<br>
 		<strong>Victory</strong><br>
 		<strong>2 - 1</strong><br>
 		<a href="editGameStats.html"><button class="btn">Edit</button></a>
 	</div>
 	<hr>
-	<div class="row">
-		<strong>Today's Game</strong><br>
-		11/7/17 at 8pm<br>
-		Center Hall Stadium<br>
-		vs. Team Suck<br>
-		Home Game <br>
-		<a href="editGame.html"><button class="btn">Edit</button></a>
-	</div>
-	<hr>
-	<div class="row">
-		<strong>Next Game</strong><br>
-		11/17/17 at 8pm<br>
-		Footballing Stadium<br>
-		vs. Team Suck<br>
-		Away Game<br>
-		<a href="editGame.html"><button class="btn">Edit</button></a>
-	</div>
+
 </div>
 <script src="js/main.js"></script>
+<script src="js/gameSchedule.js"></script>
 </body>
 </html>

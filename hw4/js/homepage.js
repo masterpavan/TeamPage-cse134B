@@ -7,17 +7,18 @@ document.querySelector('#ties').innerHTML = currentTeam.teamStats.ties;
 document.querySelector('#goalsFor').innerHTML = currentTeam.teamStats.goalsFor;
 document.querySelector('#goalsAgainst').innerHTML = currentTeam.teamStats.goalsAgainst;
 
+
 let nextGame = currentTeam.schedule.getNextGame();
+if(nextGame) {
+    let date = new Date(nextGame.date);
+    let featuredGameMarkup = `
+        <strong>Next Game</strong><br>
+        ${date.toDateString()} at <br> ${date.toTimeString()}<br>
+        at ${nextGame.location}<br>
+        vs. ${nextGame.opponent}<br>`;
 
-let featuredGameMarkup = `
-    <strong>Featured Game</strong><br>
-    ${nextGame.date}<br>
-    at ${nextGame.location}<br>
-    vs. ${nextGame.opponent}<br>`;
-
-
-
-document.querySelector('#nextGame').innerHTML = featuredGameMarkup;
+    document.querySelector('#nextGame').innerHTML = featuredGameMarkup;
+}
 
 if(currentUser.userWho === "Coach") {
     let editBtnMarkup = `<a href="editTeamStats.html"><button type="button" class="btn">Edit Team Stats</button></a>`;

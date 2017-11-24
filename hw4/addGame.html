@@ -39,7 +39,7 @@
         <form action="">
             <div class="form-item centered">
                 <label>Opponent</label>
-                <input type="text" placeholder="Enter Opponent Team Name">
+                <input id="opponent" type="text" placeholder="Enter Opponent Team Name">
             </div>
             <div class="form-item centered">
                 <label>Date/Time</label>
@@ -47,16 +47,18 @@
             </div>
             <div class="form-item centered">
                 <label>Location</label>
-                <input type="text"id="location" placeholder="Location">
+                <input type="text" id="location" placeholder="Location">
             </div>
             <label>Status</label><br>
-            <input class="form-check-input" type="radio" checked>Home <br>
-            <input class="form-check-input" type="radio">Away
+            <input name="homeOrAway" class="form-check-input" type="radio" value="Home" checked>Home <br>
+            <input name="homeOrAway" class="form-check-input" type="radio" value="Away">Away
         </form>
         <br>
-        <a href="gameSchedule.html"><button type="button" class="btn">Add Match</button></a>
+        <a href="gameSchedule.html"></a><button id="addMatch" type="button" class="btn">Add Match</button>
 
     </div>
 </div>
+<script src="js/main.js"></script>
+<script src="js/addGame.js"></script>
 </body>
 </html>
