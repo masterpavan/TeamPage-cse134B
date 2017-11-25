@@ -1,6 +1,10 @@
 let gameList = document.querySelector('#gameList');
 
 let gameTemplate = document.querySelector('#gameTemplate');
+if(currentTeam.schedule.gamesArray.length === 0) {
+    console.log('empty');
+    gameList.innerHTML = `<div class="top-space"><strong>There are no games on the Schedule. If you are a coach, you can add a game using the add button.</strong></div>`
+}
 
 currentTeam.schedule.gamesArray.forEach(function(gameObject) {
     if(!gameObject.removed) {
