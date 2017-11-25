@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Edit a Match</title>
+    <title>Edit a Game</title>
 
     <link rel="stylesheet" href="localcss.css">
 </head>
@@ -30,16 +30,17 @@
     </div>
 </nav>
 <!--End Navbar-->
-<div class="container top-space" style="text-align: center">
+<div class="container" style="text-align: center">
     <div class="row">
-        <h2>Edit Match</h2>
+        <h2>Edit Game</h2>
     </div>
+    <div id="gameHeader" class="row"></div>
 
     <div class="row">
         <form action="">
             <div class="form-item centered">
                 <label>Opponent</label>
-                <input type="text" placeholder="Enter Opponent Team Name">
+                <input id="opponent" type="text" placeholder="Enter Opponent Team Name">
             </div>
             <div class="form-item centered">
                 <label>Date/Time</label>
@@ -47,18 +48,21 @@
             </div>
             <div class="form-item centered">
                 <label>Location</label>
-                <input type="text"id="location" placeholder="Location">
+                <input type="text" id="location" placeholder="Location">
             </div>
             <label>Status</label><br>
-            <input class="form-check-input" type="radio" checked>Home <br>
-            <input class="form-check-input" type="radio">Away
+            <input name="homeOrAway" class="form-check-input" type="radio" value="Home" checked>Home <br>
+            <input name="homeOrAway" class="form-check-input" type="radio" value="Away">Away
         </form>
         <br>
-        <a href="gameSchedule.html"><button type="button" class="btn">Save Changes</button></a>
-        <a href="gameSchedule.html"><button type="button" class="btnD">Delete Match</button></a>
+        <button id="saveChange" type="button" class="btn">Save Changes</button>
+        <button id="deleteMatch" type="button" class="btnD">Delete Match</button>
 
 
     </div>
 </div>
+<a id="toGameSchedule" href="gameSchedule.html"></a>
+<script src="js/main.js"></script>
+<script src="js/editGame.js"></script>
 </body>
 </html>

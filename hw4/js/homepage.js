@@ -13,7 +13,7 @@ if(nextGame) {
     let date = new Date(nextGame.date);
     let featuredGameMarkup = `
         <strong>Next Game</strong><br>
-        ${date.toDateString()} at <br> ${date.toTimeString()}<br>
+        ${date.toLocaleString()}<br>
         at ${nextGame.location}<br>
         vs. ${nextGame.opponent}<br>`;
 

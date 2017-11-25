@@ -74,16 +74,17 @@ class Schedule {
         if(this.gamesArray.length === 0) {
             this.gamesArray.push(gameObject);
             console.log('initialized first game');
+            return;
         }
         for (let i = 0; i < this.gamesArray.length; i++) {
-            if (this.gamesArray[i].date < gameObject.date) {
-                this.gamesArray.splice(i + 1, 0, gameObject);
+            if (this.gamesArray[i].date > gameObject.date) {
+                this.gamesArray.splice(i, 0, gameObject);
                 console.log(`spliced a game in the ${i}th position`);
                 return;
             }
         }
-        this.gamesArray.splice(0, 0, gameObject);
-        console.log(`spliced a game in the 0th position`);
+        this.gamesArray.splice(this.gamesArray.length, 0, gameObject);
+        console.log(`spliced a game at the back`);
     }
 
     //find Game
@@ -106,12 +107,15 @@ class Schedule {
     //update Game
     updateGame(id, gameObject) {
         let index = this.findGameIndex(id);
-        if(index !== -1) this.gamesArray[index] = gameObject;
+        if(index !== -1) {
+            this.gamesArray.splice(index, 1);
+            this.addGame(gameObject);
+        }
     }
 
     //get Game ID
     getGameID(opponent, date) {
-        return `${opponent} at ${date}`.replace(/\s+/g, '');
+        return `${opponent} At ${date}`.replace(/\s+/g, '');
     }
 
     //create a game object
@@ -131,7 +135,13 @@ class Schedule {
     getNextGame() {
         //replace this with a thing that finds the next game
         //return a game object
-        return this.gamesArray[this.gamesArray.length - 1];
+        let now = Date.now();
+        for(let i = 0; i < this.gamesArray.length; i++) {
+            if(this.gamesArray[i].date > now
+                && this.gamesArray[i].removed === false) {
+                return this.gamesArray[i];
+            }
+        }
         /*
         return {
             id: 'test',

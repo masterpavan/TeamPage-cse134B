@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" class="">
 <head>
-    <meta charset="utf-8" />
-    <title>View Game Stats</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Edit Game Options</title>
 
     <link rel="stylesheet" href="localcss.css">
 </head>
-<body>
+<body class="">
+
 <!--Navbar-->
 <nav>
     <div class="container" align="center">
@@ -30,30 +30,20 @@
     </div>
 </nav>
 <!--End Navbar-->
-
 <div class="container" style="text-align: center">
-
-    <div id="gameHeader" class="row"></div>
-
-    <div id="statBarList" class="row">
-        <template id="statBar">
-            <div class="barItem">
-                <strong id="statTitle"></strong>
-                <div class="outerbar">
-                    <div id="statRatio" class="innerbar" style="width: 75%">
-                    </div>
-                </div>
-                <span class="label" id="statLabel"></span>
-            </div>
-        </template>
+    <div class="row">
+        <h2>Edit Game</h2>
     </div>
-
+    <div id="gameHeader" class="row"></div>
+    <div class="row">
+        <a href="editGameStats.html"><button type="button" class="btn">Add/Edit Game Stats</button></a>
+    </div>
     <div class="row top-space">
-        <a href="editGameStats.html"><button type="button" class="btn">Edit</button></a>
+        <a href="editGame.html"><button type="button" class="btn">Change Game Details</button></a>
     </div>
 </div>
 
 <script src="js/main.js"></script>
-<script src="js/viewGameStats.js"></script>
+<script src="js/editGame.js"></script>
 </body>
 </html>
