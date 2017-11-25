@@ -2,7 +2,17 @@ let userEmail = document.querySelector("#userEmail");
 let userPass = document.querySelector("#userPass");
 //initialize empty users db if there are no users
 if(!window.localStorage.getItem("users")) {
-    let users = {};
+    let users = {
+        "test": {
+            "userID":"test",
+            "username":"test",
+            "userEmail":"test@test.com",
+            "userFName":"Test",
+            "userLName":"Testerson",
+            "userPass":"123",
+            "userWho":"Coach"
+        }
+    };
     window.localStorage.setItem("users", JSON.stringify(users));
 }
 
