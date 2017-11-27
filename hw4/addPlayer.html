@@ -67,7 +67,7 @@
 			</div>
 			<div class="form-item centered">
 				<label>Position</label>
-				<select>
+				<select id="position">
 					<option value="Goalkeeper">Goalkeeper</option>
 					<option value="Defender">Defender</option>
 					<option value="Midfielder">Midfielder</option>
@@ -75,11 +75,16 @@
 				</select>
 			</div>
 			<label for="captain">Captain</label>
-			<input type="checkbox"> <br>
+			<input name="captain" id="captain" type="checkbox" value="1"> 
+			<input name="captain" id="captain" type="hidden" value="0">
 			<br>
-			<a href="viewPlayers.html"><button type="button" class="btn">Add Player</button></a>
+			<br>
+			<a href="viewPlayers.html"><button type="button" id="addPlayer" class="btn">Add Player</button></a>
 		</form>
 	</div>
 </div>
+<a id="toPlayerRoster" href="viewPlayers.html"</a>
+<script src="js/main.js"></script>
+<script src="js/addPlayer.js"></script>
 </body>
 </html>
