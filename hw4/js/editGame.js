@@ -21,6 +21,8 @@ if(document.title === "Edit a Game") {
     document.querySelector('#saveChange').addEventListener('click', function () {
         if(errorInForm()) printErrorMessage();
         else {
+
+            document.querySelector('#toGameSchedule').click();
             let opponent = document.querySelector('#opponent').value;
             let location = document.querySelector('#location').value;
             let date = new Date(document.querySelector('#datetime').value);
@@ -40,9 +42,12 @@ if(document.title === "Edit a Game") {
     });
 
     document.querySelector('#deleteMatch').addEventListener('click', function () {
+        document.querySelector('#toGameSchedule').click();
         let gameObject = JSON.parse(window.localStorage.getItem("currentGame"));
         currentTeam.schedule.removeGame(gameObject.id);
         currentTeam.saveToDatabase();
+        gameObject.removed = true;
+        window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
 
     });
 }

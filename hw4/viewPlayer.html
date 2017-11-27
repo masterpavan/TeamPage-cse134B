@@ -12,14 +12,14 @@
       display: inline-block;
     }
 
-    .noForm #label {
+    .noForm .label {
       width: 30vw;
       text-align: right;
       font-weight: bold;
         padding: 0 1rem;
     }
 
-    .noForm #input {
+    .noForm .input {
       width: 30vw;
       text-align: left;
         padding: 0 1rem;
@@ -55,37 +55,40 @@
         <div class="row top-space">
         </div>
         <div class="centered" id="prof">
-            <img src="../../res/1.jpg"  alt="player pic" height="200" width="200"> <br>
-            <p class="name">Pavan Purewal<br>000001</p>
+            <img src="../res/1.jpg"  alt="player pic" height="200" width="200"> <br>
+            <p id="playerName" class="name">Pavan Purewal<br>000001</p>
         </div>
         <div>
-            <p id="label">Position</p>
-            <p id="input">Goalkeeper</p>
+            <p class="label">Position</p>
+            <p id="position" class="input">Striker</p>
         </div>
         <div>
-            <p id="label">Jersey #</p>
-            <p id="input">10</p>
+            <p class="label">Jersey #</p>
+            <p id="playerNumber" class="input">10</p>
         </div>
         <div>
-            <p id="label">Date of Birth</p>
-            <p id="input">10/30/2017</p>
+            <p class="label">Date of Birth</p>
+            <p id="dob" class="input">10/30/2017</p>
         </div>
         <div>
-            <p id="label">Goals</p>
-            <p id="input">10</p>
+            <p class="label">Goals</p>
+            <p id="goals" class="input">10</p>
         </div>
         <div>
-            <p id="label">Assists</p>
-            <p id="input">8</p>
+            <p class="label">Assists</p>
+            <p id="assists" class="input">8</p>
         </div>
         <div>
-            <p id="label">Games Played</p>
-            <p id="input">20</p>
+            <p class="label">Games Played</p>
+            <p id="gamesPlayed" class="input">20</p>
         </div>
         <br>
-        <a href="editPlayer.html"><button type="button" class="btn">Edit Player</button></a>
+        <div id="editBtnSpace"></div>
+
     </div>
 </div>
 
+<script src="js/main.js"></script>
+<script src="js/viewPlayer.js"></script>
 </body>
 </html> 

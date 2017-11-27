@@ -61,13 +61,13 @@ class Roster {
 			
      //find player in roster
      findPlayerIndex(id) {
-	for(let i = 0; i < this.playersArray.length; i++) {
-		if(this.playersArray[i].id === id
-			&& this.playersArray[i].removed === false) {
-			return i;
-		}
-	}
-	return -1;
+        for(let i = 0; i < this.playersArray.length; i++) {
+            if(this.playersArray[i].id === id
+                && this.playersArray[i].removed === false) {
+                return i;
+            }
+        }
+	    return -1;
      }
 	
      //remove player in roster
@@ -85,11 +85,6 @@ class Roster {
          }
      }
 
-     //get playerId 
-     getPlayerID(jersey, dob) {
-         return `${jersey} At ${dob}`.replace(/\s+/g, '');
-     }
-
      //create playerObject
      createPlayerObject(fName, lName, email, dob, jersey, position, captain) {
        return new Player(fName, lName, email, dob, jersey, position, captain);
@@ -99,20 +94,21 @@ class Roster {
 
 class Player {
     constructor(fName, lName, email, dob, jersey, position, captain) {
-        this.playerId = fName + lName + jersey;
-	this.playerFName = fName;
+        this.id = fName + lName + jersey;
+        this.removed = false;
+	    this.playerFName = fName;
         this.playerLName = lName;
-	this.playerEmail = email;
+	    this.playerEmail = email;
         this.playerBDay = dob;
         this.playerNumber = jersey;
         this.position = position;
         this.captain = captain;
         this.goals = 0;
-	this.assists = 0;
-	this.fouls = 0;
-	this.yellow = 0;
-	this.red = 0;
-	this.gamesPlayed = 0;
+	    this.assists = 0;
+	    this.fouls = 0;
+        this.yellow = 0;
+	    this.red = 0;
+	    this.gamesPlayed = 0;
     }
 }
 

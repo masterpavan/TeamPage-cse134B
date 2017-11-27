@@ -1,5 +1,5 @@
 function errorInForm() {
-        if(!document.querySelector('#fName').value) return true;
+    if(!document.querySelector('#fName').value) return true;
 	if(!document.querySelector('#lName').value) return true;
 	if(!document.querySelector('#email').value) return true;
 	if(!document.querySelector('#dob').value) return true;
@@ -8,6 +8,8 @@ function errorInForm() {
 
 function printErrorMessage() {
         console.log("fix your input");
+            document.querySelector('#errorSpace').innerHTML =
+                `<blockquote>You must fill in all of the fields</blockquote>`;
 }
 
 document.querySelector('#addPlayer').addEventListener('click', function() {

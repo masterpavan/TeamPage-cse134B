@@ -1,13 +1,12 @@
 let gameList = document.querySelector('#gameList');
 
 let gameTemplate = document.querySelector('#gameTemplate');
-if(currentTeam.schedule.gamesArray.length === 0) {
-    console.log('empty');
-    gameList.innerHTML = `<div class="top-space"><strong>There are no games on the Schedule. If you are a coach, you can add a game using the add button.</strong></div>`
-}
 
+let numGames = 0;
 currentTeam.schedule.gamesArray.forEach(function(gameObject) {
+
     if(!gameObject.removed) {
+        numGames++;
         let date = new Date(gameObject.date);
         gameTemplate.content.querySelector('#gameHeader').innerHTML = `Team XYZ vs. ${gameObject.opponent}`;
         gameTemplate.content.querySelector('#date').innerHTML = date.toLocaleString();
@@ -27,6 +26,11 @@ currentTeam.schedule.gamesArray.forEach(function(gameObject) {
         gameList.appendChild(clone);
     }
 });
+
+if(numGames === 0) {
+    console.log('empty');
+    gameList.innerHTML = `<div class="top-space"><strong>There are no games on the Schedule. If you are a coach, you can add a game using the add button.</strong></div>`
+}
 
 if(currentUser.userWho === "Coach") {
     document.querySelector('#addBtn').innerHTML = `<a href="addGame.html"><button class="btn">Add</button></a>`;

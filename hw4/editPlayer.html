@@ -42,7 +42,7 @@
     </div>
     <div class="row">
         <div class="centered">
-            <img src="../../res/1.jpg" id="photo" alt="player pic" height="200" width="200"> <br>
+            <img src="../res/1.jpg" id="photo" alt="player pic" height="200" width="200"> <br>
             <button id="add" class="btn">Change Photo</button>
         </div>
     </div>
@@ -50,7 +50,7 @@
         <form action="">
             <div class="form-item centered">
                 <label for="fName">First Name</label>
-                <input  type="text" id="fName" name="fName" required value="Pavan">
+                <input type="text" id="fName" name="fName" required value="Pavan">
             </div>
             <div class="form-item centered">
                 <label for="lName">Last Name</label>
@@ -70,7 +70,7 @@
             </div>
             <div class="form-item centered">
                 <label for="pos">Position</label>
-                <select>
+                <select id="position">
                     <option value="Goalkeeper">Goalkeeper</option>
                     <option value="Defender">Defender</option>
                     <option value="Midfielder">Midfielder</option>
@@ -79,13 +79,17 @@
             </div>
             <div class="centered">
                 <label for="captain">Captain</label>
-                <input type="checkbox" checked>
+                <input name="captain" id="captain" type="checkbox" value="1">
+                <input name="captain" id="captain" type="hidden" value="0">
             </div>
             <br>
-            <a href="viewPlayers.html"><button type="button" class="btn">Save Player</button></a>
-            <a href="viewPlayers.html"><button type="button" class="btnD">Delete Player</button></a>
+            <a id="toPlayerRoster" href="viewPlayers.html"></a>
+            <button id="saveChanges" type="button" class="btn">Save Player</button>
+            <button id="deletePlayer" type="button" class="btnD">Delete Player</button>
         </form>
     </div>
 </div>
+<script src="js/main.js"></script>
+<script src="js/editPlayer.js"></script>
 </body>
 </html>
