@@ -33,31 +33,86 @@ class Team {
 
 class Roster {
      constructor(rosterArray) {
-         //players is an array of Player objects
-         if(rosterArray.length === 0) this.playersArray = [];
-         else {
-             this.playersArray = rosterArray.map(function (playerObject) {
-                 return new Player(playerObject);
-             });
+	if (rosterArray.length === 0) this.playersArray = [];
+	else {
+		console.log("here");
+		this.playersArray = rosterArray;
+	}
+	
+     }
+
+     //add player to roster
+     addPlayer(playerObject) {
+ 	if(this.playersArray.length === 0) {
+		this.playersArray.push(playerObject);
+		console.log('initialized first player');
+		return;
+	}
+	for(let i = 0; i < this.playersArray.length; i++) {
+		if (this.playersArray[i].jersey > playerObject.jersey) {
+			this.playersArray.splice(i, 0, playerObject);
+			console.log(`spliced a game in the ${i}th position`);
+			return;
+		}
+	}
+	this.playersArray.splice(this.playersArray.length, 0, playerObject);
+	console.log(`spliced a player at the end`);
+     }
+			
+     //find player in roster
+     findPlayerIndex(id) {
+	for(let i = 0; i < this.playersArray.length; i++) {
+		if(this.playersArray[i].id === id
+			&& this.playersArray[i].removed === false) {
+			return i;
+		}
+	}
+	return -1;
+     }
+	
+     //remove player in roster
+     removePlayer(id) {
+        let index = this.findPlayerIndex(id);
+        if(index !== -1) this.playersArray[index].removed = true;
+     }
+
+     //update player in roster
+     updatePlayer(id, playerObject) {
+         let index = this.findPlayerIndex(id);
+         if(index !== -1) {
+             this.playersArray.splice(index, 1);
+             this.addPlayer(playerObject);
          }
      }
 
-     //add player
+     //get playerId 
+     getPlayerID(jersey, dob) {
+         return `${jersey} At ${dob}`.replace(/\s+/g, '');
+     }
 
-     //find player
-
-     //remove player
-
-     //update player
+     //create playerObject
+     createPlayerObject(fName, lName, email, dob, jersey, position, captain) {
+       return new Player(fName, lName, email, dob, jersey, position, captain);
+     }
 
 }
 
 class Player {
-    constructor(playerObject) {
-        this.playerName = playerObject.playerName;
-        this.playerNumber = playerObject.playerNumber;
-        this.position = playerObject.position;
-        this.playerStats = playerObject.playerStats;
+    constructor(fName, lName, email, dob, jersey, position, captain) {
+        this.playerId = fName + lName + jersey;
+	this.playerFName = fName;
+        this.playerLName = lName;
+	this.playerEmail = email;
+        this.playerBDay = dob;
+        this.playerNumber = jersey;
+        this.position = position;
+        this.captain = captain;
+        this.goals = 0;
+	this.assists = 0;
+	this.fouls = 0;
+	this.yellow = 0;
+	this.red = 0;
+	this.gamesPlayed = 0;
     }
 }
 
