@@ -24,7 +24,7 @@ Object.keys(gameObject.gameStats).forEach(function(gameObjectKey) {
     if((stat1+stat2) !== 0) ratio = stat1/(stat1+stat2) * 100;
 
     statBarTemplate.content.querySelector('#statTitle').innerHTML = gameObjectKey;
-    statBarTemplate.content.querySelector('#statRatio').style = `width: ${ratio}%`;
+    statBarTemplate.content.querySelector('#statRatio').style = `width: ${ratio}%;`;
     statBarTemplate.content.querySelector('#statLabel').innerHTML = `${stat1} - ${stat2}`;
 
     let clone = document.importNode(statBarTemplate.content, true);
