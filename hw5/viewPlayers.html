@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>View Player Stats</title>
+    <link rel="stylesheet" href="localcss.css">
+</head>
+<body>
+<!--Navbar-->
+<nav>
+    <div class="container" align="center">
+        <div class="topbar">
+            <a href="login.html"><button class="btn">Logout</button></a>
+	    <span id="addBtn"></span>
+        </div>
+        <div class="row">
+            <h1 style="margin: -2rem 0 0 0">Team XYZ</h1>
+        </div>
+        <div class="row">
+            <ul>
+                <li><a href="homepage.html">Home</a></li
+                ><li><a href="gameSchedule.html">Game</a></li
+            ><li><a href="viewPlayers.html">Player</a></li
+            ><li><a href="viewGameStats.html">Manage</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--End Navbar-->
+<div id="playerList" class="container centered" >
+        <div class="row" style="text-align: center"><h3>Player Roster</h3></div>
+        <div class="row justify-content-center" style="overflow: auto">
+            	<table id="myTable" class="centered table" style="width: inherit">
+                	<thead><tr>
+                    	<th>Player</th>
+                    	<th>Number</th>
+                    	<th>Goals</th>
+                    	<th>Assists</th>
+                    	<th>Fouls</th>
+                    	<th>Yellow Cards</th>
+                    	<th>Red Cards</th>
+                	</tr>
+                	</thead>
+                	<tbody id="rosterList">
+	            <template id="rosterTemplate">
+                		<tr><td><a  class="tabletab" id="name" href="viewPlayer.html"></a></td><td id="number"></td><td id="goals"></td><td id="assists"></td><td id="fouls"></td><td id="yellow"></td><td id="red"></td></tr>
+		        </template>
+                	</tbody>
+		</table>
+        </div>
+</div>
+
+    <style>
+        .table > thead > tr > th:nth-child(2) {
+            border-right: 1px solid #000;
+        }
+        .table > tbody > tr > td:nth-child(2) {
+            border-right: 1px solid #000;
+        }
+    </style>
+<script src="js/main.js"></script>
+<script src="js/viewPlayers.js"></script>
+</body>
+</html>

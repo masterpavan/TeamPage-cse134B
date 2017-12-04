@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="localcss.css">
+</head>
+<body>
+
+<div class="container" style="padding-top: 10%">
+
+    <div class="row" style="text-align: center">
+        <h1>TeamWatch</h1><br>
+        <img src="../res/soccerball.png" alt="">
+    </div>
+
+    <div class="row">
+        <form id="loginForm" action="">
+            <div class="form-item centered">
+                <label for="userEmail">Username</label>
+                <input type="text" class="form-control" id="userEmail" placeholder="Enter Username" required>
+            </div>
+            <div class="form-item centered">
+                <label for="userPass">Password</label>
+                <input type="password" class="form-control" id="userPass" placeholder="Password" required>
+            </div>
+        </form>
+    </div>
+    <div class="row" style="text-align: center">
+        <a id="toHomepage" href="homepage.html"></a><button id="signIn" type="button" class="btn btn-primary">Sign In</button>
+        <a href="signUp.html"><button type="button" class="btn btn-primary">Sign Up</button></a>
+    </div>
+    <div id="errorSpace" class="row">
+    </div>
+</div>
+<script src="js/login.js"></script>
+</body>
+</html>

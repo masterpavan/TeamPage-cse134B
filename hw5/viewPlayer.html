@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>View Player</title>
+  <link rel="stylesheet" href="localcss.css"> 
+  <style>
+
+    .noForm p {
+      display: inline-block;
+    }
+
+    .noForm .label {
+      width: 30vw;
+      text-align: right;
+      font-weight: bold;
+        padding: 0 1rem;
+    }
+
+    .noForm .input {
+      width: 30vw;
+      text-align: left;
+        padding: 0 1rem;
+    }
+ 
+  </style>
+
+</head>
+<body>
+<!--Navbar-->
+<nav>
+    <div class="container" align="center">
+        <div class="topbar">
+            <a href="login.html"><button class="btn">Logout</button></a>
+            <a href="#"><button class="btn invisible">Add</button></a>
+        </div>
+        <div class="row">
+            <h1 style="margin: -2rem 0 0 0">Team XYZ</h1>
+        </div>
+        <div class="row">
+            <ul>
+                <li><a href="homepage.html">Home</a></li
+                ><li><a href="gameSchedule.html">Game</a></li
+            ><li><a href="viewPlayers.html">Player</a></li
+            ><li><a href="viewGameStats.html">Manage</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--End Navbar-->
+<div class="container">
+    <div class="noForm" style="text-align: center">
+        <div class="row top-space">
+        </div>
+        <div class="centered" id="prof">
+            <img src="../res/1.jpg"  alt="player pic" height="200" width="200"> <br>
+            <p id="playerName" class="name">Pavan Purewal<br>000001</p>
+        </div>
+        <div>
+            <p class="label">Position</p>
+            <p id="position" class="input">Striker</p>
+        </div>
+        <div>
+            <p class="label">Jersey #</p>
+            <p id="playerNumber" class="input">10</p>
+        </div>
+        <div>
+            <p class="label">Date of Birth</p>
+            <p id="dob" class="input">10/30/2017</p>
+        </div>
+        <div>
+            <p class="label">Goals</p>
+            <p id="goals" class="input">10</p>
+        </div>
+        <div>
+            <p class="label">Assists</p>
+            <p id="assists" class="input">8</p>
+        </div>
+        <div>
+            <p class="label">Games Played</p>
+            <p id="gamesPlayed" class="input">20</p>
+        </div>
+        <br>
+        <div id="editBtnSpace"></div>
+
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/viewPlayer.js"></script>
+</body>
+</html> 

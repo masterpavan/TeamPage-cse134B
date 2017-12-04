@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>View Game Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="localcss.css">
+</head>
+<body>
+<!--Navbar-->
+<nav>
+    <div class="container" align="center">
+        <div class="topbar">
+            <a href="login.html"><button class="btn">Logout</button></a>
+            <a href="#"><button class="btn invisible">Add</button></a>
+        </div>
+        <div class="row">
+            <h1 style="margin: -2rem 0 0 0">Team XYZ</h1>
+        </div>
+        <div class="row">
+            <ul>
+                <li><a href="homepage.html">Home</a></li
+                ><li><a href="gameSchedule.html">Game</a></li
+            ><li><a href="viewPlayers.html">Player</a></li
+            ><li><a href="viewGameStats.html">Manage</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--End Navbar-->
+
+<div id="statList" class="container" style="text-align: center">
+
+    <div id="gameHeader" class="row"></div>
+
+    <div id="statBarList" class="row">
+        <template id="statBar">
+            <div class="barItem">
+                <strong id="statTitle"></strong>
+                <div class="outerbar">
+                    <div id="statRatio" class="innerbar" style="width: 75%">
+                    </div>
+                </div>
+                <span class="label" id="statLabel"></span>
+            </div>
+        </template>
+    </div>
+
+    <div id="btnSpace" class="row top-space">
+
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/viewGameStats.js"></script>
+</body>
+</html>

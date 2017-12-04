@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Homepage</title>
+	<link rel="stylesheet" href="localcss.css">
+
+	<style>
+		.stats ul li {
+			padding: 0 1rem;
+		}
+	</style>
+</head>
+<body>
+
+<!--Navbar-->
+<nav>
+	<div class="container" align="center">
+		<div class="topbar">
+			<a href="login.html"><button class="btn">Logout</button></a>
+			<a href="#"><button class="btn invisible">Add</button></a>
+		</div>
+		<div class="row">
+			<h1 style="margin: -2rem 0 0 0">Team XYZ</h1>
+		</div>
+		<div class="row">
+			<ul>
+				<li><a href="homepage.html">Home</a></li
+				><li><a href="gameSchedule.html">Game</a></li
+			><li><a href="viewPlayers.html">Player</a></li
+			><li><a href="viewGameStats.html">Manage</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!--End Navbar-->
+
+<div class="container " align="center">
+	<div class="row">
+		<h2>Team Stats</h2>
+	</div>
+	<div class="row stats">
+		<ul>
+			<li>Wins<br><span id="wins" class="display"></span></li>
+			<li>Losses<br><span id="losses" class="display"></span></li>
+			<li>Ties<br><span id="ties" class="display"></span></li>
+		</ul>
+	</div>
+	<div class="row stats">
+		<ul>
+			<li>Goals For<br><span id="goalsFor" class="display"></span></li>
+			<li>Goals Against<br><span id="goalsAgainst" class="display"></span></li>
+		</ul>
+	</div>
+	<div id="buttonZone" style="display: none"></div>
+	<hr>
+	<div id="nextGame" class="row top-space"></div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/homepage.js"></script>
+</body>
+</html>
