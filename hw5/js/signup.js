@@ -59,9 +59,9 @@ document.querySelector('#signUp').addEventListener('click', function () {
 */
 
 document.querySelector('#signUp').addEventListener('click', function () {
-        firebase.auth().createUserWithEmailAndPassword(userEmail.value, userPass.value).catch(function(error) {
-                if(errorInForm()) printErrorMessage();
-                else {
+        if(errorInForm()) printErrorMessage();
+        else {
+        	firebase.auth().createUserWithEmailAndPassword(userEmail.value, userPass.value).catch(function(error) {
                         var errorCode = error.code;
                         var errorMessage = error.message;
                         if (errorCode == 'auth/email-already-in-use') {
@@ -74,8 +74,8 @@ document.querySelector('#signUp').addEventListener('click', function () {
                                 alert(errorMessage);
                                 console.log(error);
                         }
-                }
-        });
+                });
+        }
         document.querySelector('#toLogin').click();
 });
 

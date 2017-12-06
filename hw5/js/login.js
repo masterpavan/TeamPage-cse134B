@@ -1,5 +1,6 @@
 let userEmail = document.querySelector("#userEmail");
 let userPass = document.querySelector("#userPass");
+/*
 //initialize empty users db if there are no users
 if(!window.localStorage.getItem("users")) {
     let users = {
@@ -15,7 +16,7 @@ if(!window.localStorage.getItem("users")) {
     };
     window.localStorage.setItem("users", JSON.stringify(users));
 }
-
+*/
 function errorInForm() {
     if(!userEmail.value) return true;
     if(!userPass.value) return true;
@@ -26,7 +27,7 @@ function printErrorMessage(errorMessage) {
     document.querySelector('#errorSpace').innerHTML =
         `<blockquote>${errorMessage}</blockquote>`;
 }
-
+/*
 document.querySelector('#signIn').addEventListener('click', function () {
     if(errorInForm()) printErrorMessage("You must fill in all the forms.");
     else {
@@ -47,3 +48,39 @@ document.querySelector('#signIn').addEventListener('click', function () {
         }
     }
 }, false);
+
+*/
+document.querySelector('#signIn').addEventListener('click', function () {
+	console.log("start");
+        if (errorInForm()) {
+		printErrorMessage("You must fill in all the form.");
+	}
+        else {
+	   console.log("in the else");
+           firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).catch(function(error) {
+			console.log("we in here");
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        if (errorCode == 'auth/wrong-password') {
+                                alert('Wrong password.');
+                        }
+                        else if (errorCode == 'auth/invalid-email') {
+                                alert('Invalid email.');
+                        }
+                        else if (errorCode == 'auth/user-not-found') {
+                                alert('User not found.');
+                        }
+                        else {
+                                alert(errorMessage);
+				console.log("hereman");
+                                console.log(error);
+                        }
+	  	if (!error) {
+	    		console.log("here");
+       	    		document.querySelector('#toHomepage').click();
+   	 	 }
+          });
+        }	
+});
+
+
