@@ -47,11 +47,8 @@ document.querySelector('#signIn').addEventListener('click', function () {
                 //alert(errorMessage);
                 console.log(error);
             }
-            if(!error) {
-                document.querySelector('#toHomepage').click();
-            }
         });
-
+    document.querySelector('#toHomepage').click();
     }
 
         /*let dbUser = JSON.parse(window.localStorage.getItem("users"))[userEmail.value];
