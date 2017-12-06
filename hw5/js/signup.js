@@ -46,8 +46,11 @@ document.querySelector('#signUp').addEventListener('click', function () {
             userPass: userPass.value,
             userWho: userWho.value
         };
-        addUser(user);
+        //addUser(user);
+        firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error){
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
         document.querySelector('#toLogin').click();
     }
-
 });
