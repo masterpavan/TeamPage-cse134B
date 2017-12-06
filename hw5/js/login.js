@@ -48,7 +48,7 @@ document.querySelector('#signIn').addEventListener('click', function () {
                 console.log(error);
             }
         });
-    document.querySelector('#toHomepage').click();
+        
     }
 
         /*let dbUser = JSON.parse(window.localStorage.getItem("users"))[userEmail.value];
@@ -67,3 +67,9 @@ document.querySelector('#signIn').addEventListener('click', function () {
             printErrorMessage("That user doesn't exist");
         }*/
 }, false);
+
+firebase.auth().onAuthStateChanged(user => {
+        if(user){
+            window.location = 'homepage.html';
+        }
+    }); 
