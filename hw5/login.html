@@ -19,8 +19,8 @@
     <div class="row">
         <form id="loginForm" action="">
             <div class="form-item centered">
-                <label for="userEmail">Username</label>
-                <input type="text" class="form-control" id="userEmail" placeholder="Enter Username" required>
+                <label for="userEmail">Email</label>
+                <input type="email" class="form-control" id="userEmail" placeholder="Enter Email" required>
             </div>
             <div class="form-item centered">
                 <label for="userPass">Password</label>
@@ -35,6 +35,19 @@
     <div id="errorSpace" class="row">
     </div>
 </div>
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAVYxO1dnjF1aekXilexIzzxYtR7RVRCG4",
+    authDomain: "hw2-cse134b-40899.firebaseapp.com",
+    databaseURL: "https://hw2-cse134b-40899.firebaseio.com",
+    projectId: "hw2-cse134b-40899",
+    storageBucket: "hw2-cse134b-40899.appspot.com",
+    messagingSenderId: "441414703077"
+  };
+  firebase.initializeApp(config);
+</script>
 <script src="js/login.js"></script>
 </body>
 </html>
