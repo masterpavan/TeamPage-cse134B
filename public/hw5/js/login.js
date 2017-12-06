@@ -35,7 +35,10 @@ document.querySelector('#signIn').addEventListener('click', function () {
 
     if(errorInForm()) printErrorMessage("You must fill in all the forms.");
     else {
-        firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).catch(function (error) {
+        firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).then(function(){
+            window.location = 'homepage.html';;})
+.catch(function (error) {
+
             var errorCode = error.code;
             var errorMessage = error.message;
             if (errorCode == 'auth/wrong-password') {
@@ -71,9 +74,9 @@ document.querySelector('#signIn').addEventListener('click', function () {
             printErrorMessage("That user doesn't exist");
         }*/
 }, false);
-
+/*
 firebase.auth().onAuthStateChanged(user => {
         if(user){
             window.location = 'homepage.html';
         }
-    }); 
+    });  */
