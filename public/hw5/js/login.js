@@ -27,6 +27,10 @@ function printErrorMessage(errorMessage) {
         `<blockquote>${errorMessage}</blockquote>`;
 }
 
+firebase.auth().signOut().then(function() {
+}, function(error){
+});
+
 document.querySelector('#signIn').addEventListener('click', function () {
 
     if(errorInForm()) printErrorMessage("You must fill in all the forms.");
@@ -73,7 +77,3 @@ firebase.auth().onAuthStateChanged(user => {
             window.location = 'homepage.html';
         }
     }); 
-
-firebase.auth().signOut().then(function() {
-}, function(error){
-});
