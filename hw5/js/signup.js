@@ -59,23 +59,25 @@ document.querySelector('#signUp').addEventListener('click', function () {
 */
 
 document.querySelector('#signUp').addEventListener('click', function () {
+    if(errorInForm()) printErrorMessage();
+    else {
         firebase.auth().createUserWithEmailAndPassword(userEmail.value, userPass.value).catch(function(error) {
-                if(errorInForm()) printErrorMessage();
-                else {
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
-                        if (errorCode == 'auth/email-already-in-use') {
-                                alert('This email is registered already.');
-                        }
-                        else if (errorCode == 'auth/invalid-email') {
-                                alert('The email address is invalid');
-                        }
-                        else {
-                                alert(errorMessage);
-                                console.log(error);
-                        }
-                }
+
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode == 'auth/email-already-in-use') {
+                    alert('This email is registered already.');
+            }
+            else if (errorCode == 'auth/invalid-email') {
+                    alert('The email address is invalid');
+            }
+            else {
+                    alert(errorMessage);
+                    console.log(error);
+            }
         });
+
         document.querySelector('#toLogin').click();
+    }
 });
 

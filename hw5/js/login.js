@@ -28,9 +28,33 @@ function printErrorMessage(errorMessage) {
 }
 
 document.querySelector('#signIn').addEventListener('click', function () {
+
     if(errorInForm()) printErrorMessage("You must fill in all the forms.");
     else {
-        let dbUser = JSON.parse(window.localStorage.getItem("users"))[userEmail.value];
+        firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode == 'auth/wrong-password') {
+                printErrorMessage('Wrong password.');
+            }
+            else if (errorCode == 'auth/invalid-email') {
+                printErrorMessage('Invalid email');
+            }
+            else if (errorCode == 'auth/user-not-found') {
+                printErrorMessage('User not found. Try another one.');
+            }
+            else {
+                //alert(errorMessage);
+                console.log(error);
+            }
+            if(!error) {
+                document.querySelector('#toHomepage').click();
+            }
+        });
+
+    }
+
+        /*let dbUser = JSON.parse(window.localStorage.getItem("users"))[userEmail.value];
 
         if(dbUser) {
             console.log("user found");
@@ -44,6 +68,5 @@ document.querySelector('#signIn').addEventListener('click', function () {
         } else {
             console.log("user not found");
             printErrorMessage("That user doesn't exist");
-        }
-    }
+        }*/
 }, false);
