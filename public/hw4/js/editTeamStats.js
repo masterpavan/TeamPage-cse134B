@@ -13,7 +13,7 @@ document.querySelector('#saveStats').addEventListener('click', function () {
     let goalsAgainst = document.querySelector('#goalsAgainst').value;
 
     currentTeam.updateStats(wins, losses, ties, goalsFor, goalsAgainst);
-    currentTeam.saveToDatabase();
+    currentTeam.saveToFirebase();
 
     document.querySelector('#toHomepage').click();
 

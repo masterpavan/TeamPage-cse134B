@@ -27,7 +27,29 @@ class Team {
         console.log("saved to database");
     }
 
+    saveToFirebase() {
+        let teamJSON = {
+            teamName: this.teamName,
+            roster: this.roster.playersArray,
+            schedule: this.schedule.gamesArray,
+            teamStats: this.teamStats
+        };
 
+        // Create a reference to the team doc
+        let teamDocRef = db.collection("Teams").doc("currentTeam");
+
+        return db.runTransaction(function(transaction) {
+            // This code may get re-run multiple times if there are conflicts.
+            return transaction.get(teamDocRef).then(function(teamDoc) {
+                transaction.update(teamDoc, teamJSON);
+            });
+        }).then(function() {
+            console.log("Transaction successfully committed!");
+        }).catch(function(error) {
+            console.log("Transaction failed: ", error);
+        });
+
+    }
 
 }
 
@@ -231,6 +253,30 @@ function changeUserPrivledge(user) {
 //initialize the team from the database
 let currentTeam = undefined;
 
+let currentTeamRef = db.collection("Teams").doc("currentTeam");
+
+currentTeamRef.get().then(function(doc) {
+    if (doc.exists) {
+        console.log("(INFO)[main.js] currentTeam exists. recieved: ", doc.data());
+        currentTeam = doc.data();
+    } else {
+        console.log("(INFO)[main.js] currentTeam does not exist. initializing.");
+        let teamJSON = {
+            teamName: "Team XYZ",
+            roster: [],
+            schedule: [],
+            teamStats: {
+                wins: 0, losses: 0, ties: 0, goalsFor: 0, goalsAgainst: 0
+            }
+        };
+        db.collection("Teams").doc("currentTeam").set(teamJSON);
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+
+
+/*
 if(window.localStorage.getItem("Team")) {
     let teamJSON = JSON.parse(window.localStorage.getItem("Team"));
     currentTeam = new Team(teamJSON);
@@ -245,7 +291,7 @@ if(window.localStorage.getItem("Team")) {
     };
     window.localStorage.setItem("Team", JSON.stringify(teamJSON));
     currentTeam = new Team(teamJSON);
-}
+}*/
 
 //initialize the current user from the database
 let currentUser = JSON.parse(window.localStorage.getItem("currentUser"));

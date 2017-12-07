@@ -23,7 +23,7 @@ document.querySelector('#addMatch').addEventListener('click', function () {
 
         let gameObject = currentTeam.schedule.createGameObject(opponent, date, location, homeOrAway, null);
         currentTeam.schedule.addGame(gameObject);
-        currentTeam.saveToDatabase();
+        currentTeam.saveToFirebase();
         window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
 
     }

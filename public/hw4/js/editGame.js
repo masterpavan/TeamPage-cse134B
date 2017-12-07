@@ -37,7 +37,7 @@ if(document.title === "Edit a Game") {
 
             window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
             currentTeam.schedule.updateGame(gameObject.id, gameObject);
-            currentTeam.saveToDatabase();
+            currentTeam.saveToFirebase();
         }
     });
 
@@ -45,7 +45,7 @@ if(document.title === "Edit a Game") {
         document.querySelector('#toGameSchedule').click();
         let gameObject = JSON.parse(window.localStorage.getItem("currentGame"));
         currentTeam.schedule.removeGame(gameObject.id);
-        currentTeam.saveToDatabase();
+        currentTeam.saveToFirebase();
         gameObject.removed = true;
         window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
 
@@ -130,7 +130,7 @@ if(document.title === "Edit Game Stats") {
 
         document.querySelector('#toViewGameStats').click();
         currentTeam.schedule.updateGame(gameObject.id, gameObject);
-        currentTeam.saveToDatabase();
+        currentTeam.saveToFirebase();
         window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
 
     });

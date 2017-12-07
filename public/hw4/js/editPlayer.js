@@ -36,7 +36,7 @@ document.querySelector('#saveChanges').addEventListener('click', function() {
         let playerObject = currentTeam.roster.createPlayerObject(fName, lName, email, dob, jersey, position, captain);
         console.log("Player object is:",playerObject);
         currentTeam.roster.updatePlayer(currentPlyr.id, playerObject);
-        currentTeam.saveToDatabase();
+        currentTeam.saveToFirebase();
     }
 });
 
@@ -44,6 +44,6 @@ document.querySelector('#deletePlayer').addEventListener('click', function () {
 
     document.querySelector('#toPlayerRoster').click();
     currentTeam.roster.removePlayer(currentPlyr.id);
-    currentTeam.saveToDatabase();
+    currentTeam.saveToFirebase();
 
 });

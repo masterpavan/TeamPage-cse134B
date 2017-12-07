@@ -27,6 +27,9 @@ function printErrorMessage(errorMessage) {
         `<blockquote>${errorMessage}</blockquote>`;
 }
 
+
+
+
 document.querySelector('#signIn').addEventListener('click', function () {
 
     if(errorInForm()) printErrorMessage("You must fill in all the forms.");
@@ -68,12 +71,29 @@ document.querySelector('#signIn').addEventListener('click', function () {
         }*/
 }, false);
 
-firebase.auth().onAuthStateChanged(user => {
-        if(user){
-            window.location = 'homepage.html';
-        }
-    }); 
-
+let currentUserEmail=undefined;
 firebase.auth().signOut().then(function() {
-}, function(error){
+    window.localStorage.setItem("currentUser", JSON.stringify({}));
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in.
+            currentUserEmail = user.email;
+            console.log(currentUserEmail);
+
+            db.collection("users").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    //console.log(doc.data());
+                    if(doc.data().userEmail === currentUserEmail) {
+                        currentUser = doc.data();
+                        window.localStorage.setItem("currentUser", JSON.stringify(currentUser));
+                        document.querySelector('#toHomepage').click();
+                    }
+                });
+            });
+
+        } else {
+            // User is signed out.
+        }
+    });
+}, function(error) {
 });
