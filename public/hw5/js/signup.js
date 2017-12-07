@@ -58,7 +58,9 @@ document.querySelector('#signUp').addEventListener('click', function () {
 document.querySelector('#signUp').addEventListener('click', function () {
     if(errorInForm()) printErrorMessage();
     else {
-        firebase.auth().createUserWithEmailAndPassword(userEmail.value, userPass.value).catch(function(error) {
+        firebase.auth().createUserWithEmailAndPassword(userEmail.value, userPass.value).then(function(){
+   document.querySelector('#toLogin').click();
+            }).catch(function(error) {
 
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -73,7 +75,5 @@ document.querySelector('#signUp').addEventListener('click', function () {
                     console.log(error);
             }
         });
-
-        document.querySelector('#toLogin').click();
     }
 });

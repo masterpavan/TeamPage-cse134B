@@ -72,3 +72,7 @@ firebase.auth().onAuthStateChanged(user => {
             window.location = 'homepage.html';
         }
     }); 
+
+firebase.auth().signOut().then(function() {
+}, function(error){
+});
