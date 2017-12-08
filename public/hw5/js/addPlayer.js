@@ -15,7 +15,7 @@ function printErrorMessage() {
 document.querySelector('#addPlayer').addEventListener('click', function() {
         if(errorInForm()) printErrorMessage();
         else {
-                document.querySelector('#toPlayerRoster').click();
+
                 let fName = document.querySelector('#fName').value;
                 let lName = document.querySelector('#lName').value;
                 let email = document.querySelector('#email').value;
@@ -28,7 +28,7 @@ document.querySelector('#addPlayer').addEventListener('click', function() {
 
                 let playerObject = currentTeam.roster.createPlayerObject(fName, lName, email, dob, jersey, position, captain);
                 currentTeam.roster.addPlayer(playerObject);
-                currentTeam.saveToDatabase();
+                currentTeam.saveToFirebase().then(()=>{document.querySelector('#toPlayerRoster').click()});
         }
 });
 

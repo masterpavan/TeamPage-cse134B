@@ -27,18 +27,14 @@ function printErrorMessage(errorMessage) {
         `<blockquote>${errorMessage}</blockquote>`;
 }
 
-firebase.auth().signOut().then(function() {
-}, function(error){
-});
+
+
 
 document.querySelector('#signIn').addEventListener('click', function () {
 
     if(errorInForm()) printErrorMessage("You must fill in all the forms.");
     else {
-        firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).then(function(){
-            window.location = 'homepage.html';;})
-.catch(function (error) {
-
+        firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             if (errorCode == 'auth/wrong-password') {
@@ -55,7 +51,7 @@ document.querySelector('#signIn').addEventListener('click', function () {
                 console.log(error);
             }
         });
-        
+
     }
 
         /*let dbUser = JSON.parse(window.localStorage.getItem("users"))[userEmail.value];
@@ -73,9 +69,66 @@ document.querySelector('#signIn').addEventListener('click', function () {
             printErrorMessage("That user doesn't exist");
         }*/
 }, false);
-/*
-firebase.auth().onAuthStateChanged(user => {
-        if(user){
-            window.location = 'homepage.html';
+
+let currentUserEmail=undefined;
+firebase.auth().signOut().then(function() {
+
+    window.localStorage.setItem("currentUser", JSON.stringify({}));
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+
+            //display loading circle
+
+            // User is signed in.
+            currentUserEmail = user.email;
+            console.log(currentUserEmail);
+
+            db.collection("users").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    //console.log(doc.data());
+                    if(doc.data().userEmail === currentUserEmail) {
+                        currentUser = doc.data();
+                        window.localStorage.setItem("currentUser", JSON.stringify(currentUser));
+                        document.querySelector('#toHomepage').click();
+                    }
+                });
+            });
+
+            //listen to any changes in the team from firebase
+            db.collection("Teams").doc("currentTeam")
+                .onSnapshot(function(doc) {
+                    console.log("We just got some realtime updates: ", doc && doc.data());
+                    console.log("Updating local team.");
+                    window.localStorage.setItem("currentTeam", JSON.stringify(doc.data()));
+                });
+
+            /*let currentTeamRef = db.collection("Teams").doc("currentTeam");
+
+            currentTeamRef.get().then(function(doc) {
+                if (doc.exists) {
+                    console.log("(INFO)[main.js] currentTeam exists. recieved: ", doc.data());
+                    window.localStorage.setItem("currentTeam", JSON.stringify(doc.data()));
+                } else {
+                    console.log("(INFO)[main.js] currentTeam does not exist. initializing.");
+                    let teamJSON = {
+                        teamName: "Team XYZ",
+                        roster: [],
+                        schedule: [],
+                        teamStats: {
+                            wins: 0, losses: 0, ties: 0, goalsFor: 0, goalsAgainst: 0
+                        }
+                    };
+                    db.collection("Teams").doc("currentTeam").set(teamJSON);
+                    window.localStorage.setItem("currentTeam", JSON.stringify(teamJSON));
+                }
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
+            });*/
+
+        } else {
+            // User is signed out.
         }
-    });  */
+    });
+}, function(error) {
+});

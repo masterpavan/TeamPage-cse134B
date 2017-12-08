@@ -58,7 +58,21 @@
 	<hr>
 	<div id="nextGame" class="row top-space"></div>
 </div>
-
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase-firestore.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAVYxO1dnjF1aekXilexIzzxYtR7RVRCG4",
+        authDomain: "hw2-cse134b-40899.firebaseapp.com",
+        databaseURL: "https://hw2-cse134b-40899.firebaseio.com",
+        projectId: "hw2-cse134b-40899",
+        storageBucket: "hw2-cse134b-40899.appspot.com",
+        messagingSenderId: "441414703077"
+    };
+    firebase.initializeApp(config);
+    var db = firebase.firestore();
+</script>
 <script src="js/main.js"></script>
 <script src="js/homepage.js"></script>
 </body>
