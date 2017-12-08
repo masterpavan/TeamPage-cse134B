@@ -27,7 +27,7 @@ class Team {
         console.log("saved to localstorage");
     }
 
-    saveToFirebase() {
+    async saveToFirebase() {
         let teamJSON = {
             teamName: this.teamName,
             roster: this.roster.playersArray,
@@ -38,82 +38,81 @@ class Team {
         // Create a reference to the team doc
         let teamDocRef = db.collection("Teams").doc("currentTeam");
 
-        teamDocRef.update(teamJSON);
-
-        /*return db.runTransaction(function(transaction) {
-            // This code may get re-run multiple times if there are conflicts.
-            return transaction.get(teamDocRef).then(function(teamDoc) {
-                transaction.update(teamDoc, teamJSON);
-            });
-        }).then(function() {
-            alert("Transaction successfully committed!");
-        }).catch(function(error) {
-            alert("Transaction failed: ", error);
-            alert(error);
-        });*/
+        await teamDocRef.update(teamJSON);
 
     }
 
 }
 
 class Roster {
-     constructor(rosterArray) {
-	if (rosterArray.length === 0) this.playersArray = [];
-	else {
-		console.log("here");
-		this.playersArray = rosterArray;
-	}
-	
-     }
+    constructor(rosterArray) {
+        if (rosterArray.length === 0) this.playersArray = [];
+        else {
+            console.log("here");
+            this.playersArray = rosterArray;
+        }
 
-     //add player to roster
-     addPlayer(playerObject) {
- 	if(this.playersArray.length === 0) {
-		this.playersArray.push(playerObject);
-		console.log('initialized first player');
-		return;
-	}
-	for(let i = 0; i < this.playersArray.length; i++) {
-		if (this.playersArray[i].jersey > playerObject.jersey) {
-			this.playersArray.splice(i, 0, playerObject);
-			console.log(`spliced a game in the ${i}th position`);
-			return;
-		}
-	}
-	this.playersArray.splice(this.playersArray.length, 0, playerObject);
-	console.log(`spliced a player at the end`);
-     }
-			
-     //find player in roster
-     findPlayerIndex(id) {
+    }
+
+    //add player to roster
+    addPlayer(playerObject) {
+        if(this.playersArray.length === 0) {
+            this.playersArray.push(playerObject);
+            console.log('initialized first player');
+            return;
+        }
+        for(let i = 0; i < this.playersArray.length; i++) {
+            if (this.playersArray[i].jersey > playerObject.jersey) {
+                this.playersArray.splice(i, 0, playerObject);
+                console.log(`spliced a game in the ${i}th position`);
+                return;
+            }
+        }
+        this.playersArray.splice(this.playersArray.length, 0, playerObject);
+        console.log(`spliced a player at the end`);
+    }
+
+    //find player in roster
+    findPlayerIndex(id) {
         for(let i = 0; i < this.playersArray.length; i++) {
             if(this.playersArray[i].id === id
                 && this.playersArray[i].removed === false) {
                 return i;
             }
         }
-	    return -1;
-     }
-	
-     //remove player in roster
-     removePlayer(id) {
+        return -1;
+    }
+
+    //remove player in roster
+    removePlayer(id) {
         let index = this.findPlayerIndex(id);
         if(index !== -1) this.playersArray[index].removed = true;
-     }
+    }
 
-     //update player in roster
-     updatePlayer(id, playerObject) {
-         let index = this.findPlayerIndex(id);
-         if(index !== -1) {
-             this.playersArray.splice(index, 1);
-             this.addPlayer(playerObject);
-         }
-     }
+    //update player in roster
+    updatePlayer(id, playerObject) {
+        let index = this.findPlayerIndex(id);
+        if(index !== -1) {
+            this.playersArray.splice(index, 1);
+            this.addPlayer(playerObject);
+        }
+    }
 
-     //create playerObject
-     createPlayerObject(fName, lName, email, dob, jersey, position, captain) {
-       return new Player(fName, lName, email, dob, jersey, position, captain);
-     }
+    //create playerObject
+    createPlayerObject(fName, lName, email, dob, jersey, position, captain, playerStats) {
+        return {
+            id : fName + lName + jersey,
+            removed : false,
+            playerFName : fName,
+            playerLName : lName,
+            playerEmail : email,
+            playerBDay : dob,
+            playerNumber : jersey,
+            position : position,
+            captain : captain,
+            playerStats: playerStats,
+        }
+    }
 
 }
 
@@ -121,20 +120,21 @@ class Player {
     constructor(fName, lName, email, dob, jersey, position, captain) {
         this.id = fName + lName + jersey;
         this.removed = false;
-	    this.playerFName = fName;
+        this.playerFName = fName;
         this.playerLName = lName;
-	    this.playerEmail = email;
+        this.playerEmail = email;
         this.playerBDay = dob;
         this.playerNumber = jersey;
         this.position = position;
         this.captain = captain;
         this.goals = 0;
-	    this.assists = 0;
-	    this.fouls = 0;
+        this.assists = 0;
+        this.fouls = 0;
         this.yellow = 0;
-	    this.red = 0;
-	    this.gamesPlayed = 0;
+        this.red = 0;
+        this.gamesPlayed = 0;
     }
+
 }
 
 class Schedule {
@@ -260,6 +260,15 @@ if(window.localStorage.getItem("currentTeam")) {
     let teamJSON = JSON.parse(window.localStorage.getItem("currentTeam"));
     currentTeam = new Team(teamJSON);
 }
+
+//listen to any changes in the team from firebase
+db.collection("Teams").doc("currentTeam")
+    .onSnapshot(function(doc) {
+        console.log("We just got some realtime updates: ", doc && doc.data());
+        console.log("Updating local team.")
+        window.localStorage.setItem("currentTeam", JSON.stringify(doc.data()));
+    });
+
 /*else {
     let teamJSON = {
         teamName: "Team XYZ",

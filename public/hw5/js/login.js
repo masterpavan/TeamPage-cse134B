@@ -96,7 +96,15 @@ firebase.auth().signOut().then(function() {
                 });
             });
 
-            let currentTeamRef = db.collection("Teams").doc("currentTeam");
+            //listen to any changes in the team from firebase
+            db.collection("Teams").doc("currentTeam")
+                .onSnapshot(function(doc) {
+                    console.log("We just got some realtime updates: ", doc && doc.data());
+                    console.log("Updating local team.");
+                    window.localStorage.setItem("currentTeam", JSON.stringify(doc.data()));
+                });
+
+            /*let currentTeamRef = db.collection("Teams").doc("currentTeam");
 
             currentTeamRef.get().then(function(doc) {
                 if (doc.exists) {
@@ -117,7 +125,7 @@ firebase.auth().signOut().then(function() {
                 }
             }).catch(function(error) {
                 console.log("Error getting document:", error);
-            });
+            });*/
 
         } else {
             // User is signed out.
