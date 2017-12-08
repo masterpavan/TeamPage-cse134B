@@ -26,16 +26,18 @@ function printErrorMessage(errorMessage) {
     document.querySelector('#errorSpace').innerHTML =
         `<blockquote>${errorMessage}</blockquote>`;
 }
-
+/*
 firebase.auth().signOut().then(function() {
 }, function(error){
 });
-
+*/
 document.querySelector('#signIn').addEventListener('click', function () {
 
     if(errorInForm()) printErrorMessage("You must fill in all the forms.");
     else {
-        firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).catch(function (error) {
+        firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).then(function(){
+   document.querySelector('#toHomepage').click();
+            }).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             if (errorCode == 'auth/wrong-password') {
@@ -48,7 +50,7 @@ document.querySelector('#signIn').addEventListener('click', function () {
                 printErrorMessage('User not found. Try another one.');
             }
             else {
-                //alert(errorMessage);
+                alert(errorMessage);
                 console.log(error);
             }
         });
@@ -71,9 +73,10 @@ document.querySelector('#signIn').addEventListener('click', function () {
             printErrorMessage("That user doesn't exist");
         }*/
 }, false);
-
+/*
 firebase.auth().onAuthStateChanged(user => {
         if(user){
             window.location = 'homepage.html';
         }
     }); 
+*/
