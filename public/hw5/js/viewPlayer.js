@@ -11,5 +11,6 @@ document.querySelector('#gamesPlayed').innerHTML = currentPlayer.gamesPlayed;
 
 let user =  JSON.parse(window.localStorage.getItem("currentUser"));
 if(user.userWho === "Coach") {
-    document.querySelector('#editBtnSpace').innerHTML = `<a href="editPlayerButtons.html"><button type="button" class="btn">Edit Player</button></a>`;
+    document.querySelector('#edit1').visible = true;
+    document.querySelector('#edit2').visible = true;
 } 
