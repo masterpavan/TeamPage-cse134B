@@ -36,7 +36,7 @@ document.querySelector('#saveChanges').addEventListener('click', function() {
         let playerObject = currentTeam.roster.createPlayerObject(fName, lName, email, dob, jersey, position, captain);
         console.log("Player object is:",playerObject);
         currentTeam.roster.updatePlayer(currentPlyr.id, playerObject);
-        currentTeam.saveToFirebase();
+        currentTeam.saveToDatabase();
     }
 });
 

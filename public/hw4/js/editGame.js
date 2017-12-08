@@ -37,7 +37,7 @@ if(document.title === "Edit a Game") {
 
             window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
             currentTeam.schedule.updateGame(gameObject.id, gameObject);
-            currentTeam.saveToFirebase();
+            currentTeam.saveToDatabase();
         }
     });
 
@@ -45,7 +45,7 @@ if(document.title === "Edit a Game") {
         document.querySelector('#toGameSchedule').click();
         let gameObject = JSON.parse(window.localStorage.getItem("currentGame"));
         currentTeam.schedule.removeGame(gameObject.id);
-        currentTeam.saveToFirebase();
+        currentTeam.saveToDatabase();
         gameObject.removed = true;
         window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
 
