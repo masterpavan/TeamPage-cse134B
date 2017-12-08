@@ -23,8 +23,8 @@ class Team {
             schedule: this.schedule.gamesArray,
             teamStats: this.teamStats
         };
-        window.localStorage.setItem("Team", JSON.stringify(teamJSON));
-        console.log("saved to database");
+        window.localStorage.setItem("currentTeam", JSON.stringify(teamJSON));
+        console.log("saved to localstorage");
     }
 
     saveToFirebase() {
@@ -34,20 +34,23 @@ class Team {
             schedule: this.schedule.gamesArray,
             teamStats: this.teamStats
         };
-
+        console.log('saving to firebase: ', teamJSON);
         // Create a reference to the team doc
         let teamDocRef = db.collection("Teams").doc("currentTeam");
 
-        return db.runTransaction(function(transaction) {
+        teamDocRef.update(teamJSON);
+
+        /*return db.runTransaction(function(transaction) {
             // This code may get re-run multiple times if there are conflicts.
             return transaction.get(teamDocRef).then(function(teamDoc) {
                 transaction.update(teamDoc, teamJSON);
             });
         }).then(function() {
-            console.log("Transaction successfully committed!");
+            alert("Transaction successfully committed!");
         }).catch(function(error) {
-            console.log("Transaction failed: ", error);
-        });
+            alert("Transaction failed: ", error);
+            alert(error);
+        });*/
 
     }
 
@@ -253,34 +256,11 @@ function changeUserPrivledge(user) {
 //initialize the team from the database
 let currentTeam = undefined;
 
-let currentTeamRef = db.collection("Teams").doc("currentTeam");
-
-currentTeamRef.get().then(function(doc) {
-    if (doc.exists) {
-        console.log("(INFO)[main.js] currentTeam exists. recieved: ", doc.data());
-        currentTeam = doc.data();
-    } else {
-        console.log("(INFO)[main.js] currentTeam does not exist. initializing.");
-        let teamJSON = {
-            teamName: "Team XYZ",
-            roster: [],
-            schedule: [],
-            teamStats: {
-                wins: 0, losses: 0, ties: 0, goalsFor: 0, goalsAgainst: 0
-            }
-        };
-        db.collection("Teams").doc("currentTeam").set(teamJSON);
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
-});
-
-
-/*
-if(window.localStorage.getItem("Team")) {
-    let teamJSON = JSON.parse(window.localStorage.getItem("Team"));
+if(window.localStorage.getItem("currentTeam")) {
+    let teamJSON = JSON.parse(window.localStorage.getItem("currentTeam"));
     currentTeam = new Team(teamJSON);
-} else {
+}
+/*else {
     let teamJSON = {
         teamName: "Team XYZ",
         roster: [],

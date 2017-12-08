@@ -28,7 +28,7 @@ document.querySelector('#addPlayer').addEventListener('click', function() {
 
                 let playerObject = currentTeam.roster.createPlayerObject(fName, lName, email, dob, jersey, position, captain);
                 currentTeam.roster.addPlayer(playerObject);
-                currentTeam.saveToFirebase();
+                currentTeam.saveToDatabase();
         }
 });
 

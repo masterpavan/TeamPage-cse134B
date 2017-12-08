@@ -44,6 +44,6 @@ document.querySelector('#deletePlayer').addEventListener('click', function () {
 
     document.querySelector('#toPlayerRoster').click();
     currentTeam.roster.removePlayer(currentPlyr.id);
-    currentTeam.saveToFirebase();
+    currentTeam.saveToDatabase();
 
 });

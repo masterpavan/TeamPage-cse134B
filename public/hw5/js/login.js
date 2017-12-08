@@ -51,7 +51,7 @@ document.querySelector('#signIn').addEventListener('click', function () {
                 console.log(error);
             }
         });
-        
+
     }
 
         /*let dbUser = JSON.parse(window.localStorage.getItem("users"))[userEmail.value];
@@ -73,9 +73,14 @@ document.querySelector('#signIn').addEventListener('click', function () {
 
 let currentUserEmail=undefined;
 firebase.auth().signOut().then(function() {
+
     window.localStorage.setItem("currentUser", JSON.stringify({}));
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+
+            //display loading circle
+
             // User is signed in.
             currentUserEmail = user.email;
             console.log(currentUserEmail);
@@ -89,6 +94,29 @@ firebase.auth().signOut().then(function() {
                         document.querySelector('#toHomepage').click();
                     }
                 });
+            });
+
+            let currentTeamRef = db.collection("Teams").doc("currentTeam");
+
+            currentTeamRef.get().then(function(doc) {
+                if (doc.exists) {
+                    console.log("(INFO)[main.js] currentTeam exists. recieved: ", doc.data());
+                    window.localStorage.setItem("currentTeam", JSON.stringify(doc.data()));
+                } else {
+                    console.log("(INFO)[main.js] currentTeam does not exist. initializing.");
+                    let teamJSON = {
+                        teamName: "Team XYZ",
+                        roster: [],
+                        schedule: [],
+                        teamStats: {
+                            wins: 0, losses: 0, ties: 0, goalsFor: 0, goalsAgainst: 0
+                        }
+                    };
+                    db.collection("Teams").doc("currentTeam").set(teamJSON);
+                    window.localStorage.setItem("currentTeam", JSON.stringify(teamJSON));
+                }
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
             });
 
         } else {

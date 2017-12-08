@@ -130,7 +130,7 @@ if(document.title === "Edit Game Stats") {
 
         document.querySelector('#toViewGameStats').click();
         currentTeam.schedule.updateGame(gameObject.id, gameObject);
-        currentTeam.saveToFirebase();
+        currentTeam.saveToDatabase();
         window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
 
     });
