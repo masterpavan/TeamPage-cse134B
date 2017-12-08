@@ -26,18 +26,19 @@ function printErrorMessage(errorMessage) {
     document.querySelector('#errorSpace').innerHTML =
         `<blockquote>${errorMessage}</blockquote>`;
 }
-/*
+
 firebase.auth().signOut().then(function() {
 }, function(error){
 });
-*/
+
 document.querySelector('#signIn').addEventListener('click', function () {
 
     if(errorInForm()) printErrorMessage("You must fill in all the forms.");
     else {
         firebase.auth().signInWithEmailAndPassword(userEmail.value, userPass.value).then(function(){
-   document.querySelector('#toHomepage').click();
-            }).catch(function (error) {
+            window.location = 'homepage.html';;})
+.catch(function (error) {
+
             var errorCode = error.code;
             var errorMessage = error.message;
             if (errorCode == 'auth/wrong-password') {
@@ -50,7 +51,7 @@ document.querySelector('#signIn').addEventListener('click', function () {
                 printErrorMessage('User not found. Try another one.');
             }
             else {
-                alert(errorMessage);
+                //alert(errorMessage);
                 console.log(error);
             }
         });
@@ -58,7 +59,6 @@ document.querySelector('#signIn').addEventListener('click', function () {
     }
 
         /*let dbUser = JSON.parse(window.localStorage.getItem("users"))[userEmail.value];
-
         if(dbUser) {
             console.log("user found");
             if(userPass.value === dbUser.userPass) {
@@ -78,5 +78,4 @@ firebase.auth().onAuthStateChanged(user => {
         if(user){
             window.location = 'homepage.html';
         }
-    }); 
-*/
+    });  */
