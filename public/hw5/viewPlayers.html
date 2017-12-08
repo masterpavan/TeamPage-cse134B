@@ -30,7 +30,9 @@
 </nav>
 <!--End Navbar-->
 <div id="playerList" class="container centered" >
-        <div class="row" style="text-align: center"><h3>Player Roster</h3></div>
+        <div class="row" style="text-align: center">
+		<h3>Player Roster</h3>
+	</div>
         <div class="row justify-content-center" style="overflow: auto">
             	<table id="myTable" class="centered table" style="width: inherit">
                 	<thead><tr>
@@ -45,7 +47,7 @@
                 	</thead>
                 	<tbody id="rosterList">
 	            <template id="rosterTemplate">
-                		<tr><td><a  class="tabletab" id="name" href="viewPlayer.html"></a></td><td id="number"></td><td id="goals"></td><td id="assists"></td><td id="fouls"></td><td id="yellow"></td><td id="red"></td></tr>
+                		<tr><td><a  class="tabletab" id="name" href="viewPlayer.html"></a></td><td id="number"></td><td id="goals"></td><td id="assists"></td><td id="fouls"></td><td id="yellow"></td><td id="red"></td><td><a class="tabletab" id="editBtn" href="editPlayerButtons.html">Edit Player</a></td></tr>
 		        </template>
                 	</tbody>
 		</table>

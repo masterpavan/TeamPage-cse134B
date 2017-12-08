@@ -29,40 +29,42 @@
     </div>
 </nav>
 <!--End Navbar-->
-    <table id="table" class="table table-responsive table-fixed-header">
-        <thead><tr>
-            <th>Player</th>
-            <th>Number</th>
-            <th>Goals</th>
-            <th>Assists</th>
-            <th>Fouls</th>
-            <th>Yellow Cards</th>
-            <th>Red Cards</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>John Smith</td><td>1</td><td>2</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>James Swanson</td><td>2</td><td>3</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Ralph Nader</td><td>4</td><td>3</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>David Rodriguez</td><td>6</td><td>0</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Steve Davidson</td><td>10</td><td>5</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Matt Smith</td><td>15</td><td>7</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Danny Rodgers</td><td>20</td><td>9</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Ben Swanson</td><td>25</td><td>1</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Manuel Sieem</td><td>29</td><td>2</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Eli Pacilla</td><td>35</td><td>4</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Jacob Jenner</td><td>85</td><td>2</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr><td>Patrick Kagayutan</td><td>95</td><td>3</td><td>5</td><td>1</td><td>1</td><td>0</td></tr>
-        </tbody>
-    </table>
-    <style>
-        .table > thead > tr > th:nth-child(2) {
-            border-right: 1px solid #000;
-        }
-        .table > tbody > tr > td:nth-child(2) {
-            border-right: 1px solid #000;
-        }
-    </style>
-    <a href="ViewPlayersStats.html" class="btn btn-link" color: >Save</a>
+<div class="container" style="text-align: center">
+    <div class="row">
+        <h1>Player Stats</h1>
+    </div>
+    <div class="row">
+        <form action="" >
+            <div style="width: 20vw;" class="form-item centered">
+                <label for="goals">Goals</label>
+                <input type="number" id="goals" name="goals" required min="0">
+            </div>
+            <div style="width: 20vw;" class="form-item centered">
+                <label for="assists">Assists</label>
+                <input type="number" id="assists" name="assists" required min="0">
+            </div>
+            <div style="width: 20vw;" class="form-item centered">
+                <label for="fouls">Fouls</label>
+                <input type="number" id="fouls" name="fouls" required min="0">
+            </div>
+            <div style="width: 20vw;" class="form-item centered">
+                <label for="yellow">Yellow Cards</label>
+                <input type="number" id="yellow" name="yellow" required min="0">
+            </div>
+            <div style="width: 20vw;" class="form-item centered">
+                <label for="red">Red Cards</label>
+                <input type="number" id="red" name="red" required min="0">
+            </div>
+        </form>
+    </div>
+    <div class="row top-space">
+        <a id="toRoster" href="viewPlayers.html"></a><button id="saveStats" type="button" class="btn">Save Changes</button>
+        <a href="viewPlayer.html"><button type="button" class="btnD">Discard Changes</button></a>
+    </div>
+</div>
+
+
+<script src="js/main.js"></script>
+<script src="js/editPlayerStats.js"></script>
 </body>
 </html>

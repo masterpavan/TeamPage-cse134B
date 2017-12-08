@@ -110,6 +110,14 @@ class Player {
 	    this.red = 0;
 	    this.gamesPlayed = 0;
     }
+
+    updateStats(goals, assists, fouls, yellow, red) {
+        this.goals = goals;
+        this.assists = assists;
+        this.fouls = fouls;
+	this.yellow = yellow;
+	this.red = red;
+    }
 }
 
 class Schedule {

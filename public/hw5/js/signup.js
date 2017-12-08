@@ -4,8 +4,6 @@ let userFName = document.querySelector("#userFName");
 let userLName = document.querySelector("#userLName");
 let userPass = document.querySelector("#userPass");
 let userPassConf = document.querySelector("#userPassConf");
-
-
 /*
 function uuid() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
@@ -19,6 +17,7 @@ function errorInForm() {
     if(!userFName.value) return true;
     if(!userLName.value) return true;
     if(!userPass.value) return true;
+    if(!document.querySelector('input[name=who]:checked')) return true;
 }
 
 function printErrorMessage() {
@@ -33,9 +32,7 @@ function addUser(user) {
     window.localStorage.setItem("users", JSON.stringify(users));
     console.log("added user to storage");
 }
-
 document.querySelector('#signUp').addEventListener('click', function () {
-
     let userWho = document.querySelector("input[name=who]:checked");
     if(errorInForm()) printErrorMessage();
     else {
@@ -55,23 +52,34 @@ document.querySelector('#signUp').addEventListener('click', function () {
         });
         document.querySelector('#toLogin').click();
     }
-
 });
 */
 
 document.querySelector('#signUp').addEventListener('click', function () {
     if(errorInForm()) printErrorMessage();
     else {
+        let userWho = document.querySelector('input[name=who]:checked');
         firebase.auth().createUserWithEmailAndPassword(userEmail.value, userPass.value).then(function(){
-   document.querySelector('#toLogin').click();
+            db.collection("users").add({
+                username: username.value,
+                userEmail: userEmail.value,
+                userFName: userFName.value,
+                userLName: userLName.value,
+                userWho: userWho.value
+            }).then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                document.querySelector('#toLogin').click();
             }).catch(function(error) {
+                alert("Error adding document: ", error);
+            });
+        }).catch(function(error) {
 
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            if (errorCode == 'auth/email-already-in-use') {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            if (errorCode === 'auth/email-already-in-use') {
                     alert('This email is registered already.');
             }
-            else if (errorCode == 'auth/invalid-email') {
+            else if (errorCode === 'auth/invalid-email') {
                     alert('The email address is invalid');
             }
             else {
@@ -81,3 +89,4 @@ document.querySelector('#signUp').addEventListener('click', function () {
         });
     }
 });
+
