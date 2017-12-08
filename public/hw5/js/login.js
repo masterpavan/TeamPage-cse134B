@@ -55,7 +55,6 @@ document.querySelector('#signIn').addEventListener('click', function () {
     }
 
         /*let dbUser = JSON.parse(window.localStorage.getItem("users"))[userEmail.value];
-
         if(dbUser) {
             console.log("user found");
             if(userPass.value === dbUser.userPass) {

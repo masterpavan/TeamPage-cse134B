@@ -32,9 +32,7 @@ function addUser(user) {
     window.localStorage.setItem("users", JSON.stringify(users));
     console.log("added user to storage");
 }
-
 document.querySelector('#signUp').addEventListener('click', function () {
-
     let userWho = document.querySelector("input[name=who]:checked");
     if(errorInForm()) printErrorMessage();
     else {
@@ -54,7 +52,6 @@ document.querySelector('#signUp').addEventListener('click', function () {
         });
         document.querySelector('#toLogin').click();
     }
-
 });
 */
 
@@ -92,3 +89,4 @@ document.querySelector('#signUp').addEventListener('click', function () {
         });
     }
 });
+
