@@ -16,6 +16,7 @@ if(!window.localStorage.getItem("users")) {
     window.localStorage.setItem("users", JSON.stringify(users));
 }
 
+
 function errorInForm() {
     if(!userEmail.value) return true;
     if(!userPass.value) return true;

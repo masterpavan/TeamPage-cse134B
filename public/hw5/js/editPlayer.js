@@ -22,7 +22,7 @@ function printErrorMessage() {
 document.querySelector('#saveChanges').addEventListener('click', function() {
     if(errorInForm()) printErrorMessage();
     else {
-        document.querySelector('#toPlayerRoster').click();
+
         let fName = document.querySelector('#fName').value;
         let lName = document.querySelector('#lName').value;
         let email = document.querySelector('#email').value;
@@ -33,17 +33,16 @@ document.querySelector('#saveChanges').addEventListener('click', function() {
         let check = document.querySelector('#captain');
         let captain = check.value;
 
-        let playerObject = currentTeam.roster.createPlayerObject(fName, lName, email, dob, jersey, position, captain);
+        let playerObject = currentTeam.roster.createPlayerObject(fName, lName, email, dob, jersey, position, captain, currentPlyr.playerStats);
         console.log("Player object is:",playerObject);
         currentTeam.roster.updatePlayer(currentPlyr.id, playerObject);
-        currentTeam.saveToFirebase();
+        currentTeam.saveToFirebase().then(()=>{document.querySelector('#toPlayerRoster').click()});
     }
 });
 
 document.querySelector('#deletePlayer').addEventListener('click', function () {
 
-    document.querySelector('#toPlayerRoster').click();
     currentTeam.roster.removePlayer(currentPlyr.id);
-    currentTeam.saveToFirebase();
+    currentTeam.saveToFirebase().then(()=>{document.querySelector('#toPlayerRoster').click()});
 
 });

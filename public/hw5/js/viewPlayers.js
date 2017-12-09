@@ -11,11 +11,11 @@ currentTeam.roster.playersArray.forEach(function(playerObject) {
         rosterTemplate.content.querySelector('#name').className += ` ${playerObject.id}`;
         rosterTemplate.content.querySelector('#name').innerHTML = playerObject.playerFName + " " + playerObject.playerLName;
 		rosterTemplate.content.querySelector('#number').innerHTML = playerObject.playerNumber;
-		rosterTemplate.content.querySelector('#goals').innerHTML  = playerObject.goals;
-		rosterTemplate.content.querySelector('#assists').innerHTML = playerObject.assists;
-		rosterTemplate.content.querySelector('#fouls').innerHTML = playerObject.fouls;
-		rosterTemplate.content.querySelector('#yellow').innerHTML = playerObject.yellow;
-		rosterTemplate.content.querySelector('#red').innerHTML = playerObject.red;
+		rosterTemplate.content.querySelector('#goals').innerHTML  = playerObject.playerStats.goals;
+		rosterTemplate.content.querySelector('#assists').innerHTML = playerObject.playerStats.assists;
+		rosterTemplate.content.querySelector('#fouls').innerHTML = playerObject.playerStats.fouls;
+		rosterTemplate.content.querySelector('#yellow').innerHTML = playerObject.playerStats.yellow;
+		rosterTemplate.content.querySelector('#red').innerHTML = playerObject.playerStats.red;
 
 		let clone = document.importNode(rosterTemplate.content, true);
 		rosterList.appendChild(clone);

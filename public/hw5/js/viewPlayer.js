@@ -1,12 +1,12 @@
 
 let currentPlayer = JSON.parse(window.localStorage.getItem("currentPlayer"));
+
 document.querySelector('#playerName').innerHTML = `${currentPlayer.playerFName} ${currentPlayer.playerLName}`;
 document.querySelector('#position').innerHTML = currentPlayer.position;
 document.querySelector('#playerNumber').innerHTML = currentPlayer.playerNumber;
 document.querySelector('#dob').innerHTML = currentPlayer.playerBDay;
-document.querySelector('#goals').innerHTML = currentPlayer.goals;
-document.querySelector('#assists').innerHTML = currentPlayer.assists;
-document.querySelector('#gamesPlayed').innerHTML = currentPlayer.gamesPlayed;
+document.querySelector('#goals').innerHTML = currentPlayer.playerStats.goals;
+document.querySelector('#assists').innerHTML = currentPlayer.playerStats.assists;
 
 
 let user =  JSON.parse(window.localStorage.getItem("currentUser"));

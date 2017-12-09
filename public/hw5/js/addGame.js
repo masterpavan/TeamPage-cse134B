@@ -14,7 +14,7 @@ function printErrorMessage() {
 document.querySelector('#addMatch').addEventListener('click', function () {
     if(errorInForm()) printErrorMessage();
     else {
-        document.querySelector('#toGameSchedule').click();
+
         let opponent = document.querySelector('#opponent').value;
         let location = document.querySelector('#location').value;
         let date = new Date(document.querySelector('#datetime').value);
@@ -23,8 +23,7 @@ document.querySelector('#addMatch').addEventListener('click', function () {
 
         let gameObject = currentTeam.schedule.createGameObject(opponent, date, location, homeOrAway, null);
         currentTeam.schedule.addGame(gameObject);
-        currentTeam.saveToFirebase();
-        window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
+        currentTeam.saveToFirebase().then(()=>{document.querySelector('#toGameSchedule').click()});
 
     }
 });

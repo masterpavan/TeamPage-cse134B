@@ -3,20 +3,46 @@ const cacheID = 'v1';
 // Files to precache
 const cacheFiles = [
     // HTML Files
-    './login.html',
-    './signup.html',
-    './homepage.html',
+    'login.html',
+    'signUp.html',
+    'homepage.html',
+    'addGame.html',
+    'addPlayer.html',
+    'editGame.html',
+    'editGameButtons.html',
+    'editPlayer.html',
+    'editPlayerStats.html',
+    'editTeamStats.html',
+    'gameSchedule.html',
+    'viewGameStats.html',
+    'viewPlayer.html',
+    'viewPlayers.html',
     // CSS Files
-    './localcss.css',
+    'localcss.css',
     // Image Files
     'images/icons/soccerball200.png',
+    '/res/soccerball.png',
     // JS Files
-    'js/index.js',
-    'js/raven.min.js',
-    './sw.js',
-    './main.js',
+    'sw.js',
+    'main.js',
+    'firebase-app.js',
+    'firebase-auth.js',
+    'firebase-firestore.js',
+    'js/addGame.js',
+    'js/addPlayer.js',
+    'js/editGame.js',
+    'js/editPlayer.js',
+    'js/editPlayerStats.js',
+    'js/editTeamStats.js',
+    'js/gameSchedule.js',
+    'js/homepage.js',
+    'js/login.js',
+    'js/signup.js',
+    'js/viewGameStats.js',
+    'js/viewPlayer.js',
+    'js/viewPlayers.js',
     // Misc. Files
-    './manifest.webmanifest',
+    'manifest.webmanifest',
 ];
 
 // Service Worker Install Event

@@ -22,7 +22,7 @@ if(document.title === "Edit a Game") {
         if(errorInForm()) printErrorMessage();
         else {
 
-            document.querySelector('#toGameSchedule').click();
+
             let opponent = document.querySelector('#opponent').value;
             let location = document.querySelector('#location').value;
             let date = new Date(document.querySelector('#datetime').value);
@@ -37,17 +37,17 @@ if(document.title === "Edit a Game") {
 
             window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
             currentTeam.schedule.updateGame(gameObject.id, gameObject);
-            currentTeam.saveToFirebase();
+            currentTeam.saveToFirebase().then(()=>{document.querySelector('#toGameSchedule').click()});
         }
     });
 
     document.querySelector('#deleteMatch').addEventListener('click', function () {
-        document.querySelector('#toGameSchedule').click();
+
         let gameObject = JSON.parse(window.localStorage.getItem("currentGame"));
         currentTeam.schedule.removeGame(gameObject.id);
-        currentTeam.saveToFirebase();
         gameObject.removed = true;
         window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
+        currentTeam.saveToFirebase().then(()=>{document.querySelector('#toGameSchedule').click()});
 
     });
 }
@@ -128,10 +128,11 @@ if(document.title === "Edit Game Stats") {
 
         gameObject.result += `<br>${team1Score} - ${team2Score}`;
 
-        document.querySelector('#toViewGameStats').click();
+
         currentTeam.schedule.updateGame(gameObject.id, gameObject);
-        currentTeam.saveToFirebase();
         window.localStorage.setItem("currentGame", JSON.stringify(gameObject));
+
+        currentTeam.saveToFirebase().then(()=>{document.querySelector('#toViewGameStats').click()});
 
     });
 

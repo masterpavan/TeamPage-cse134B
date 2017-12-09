@@ -219,6 +219,25 @@ class Schedule {
 }
 
 //testing methods
+function initializeFirebase() {
+    let teamJSON = {
+        teamName: "Team XYZ",
+        roster: [],
+        schedule: [],
+        teamStats: {
+            wins: 0, losses: 0, ties: 0, goalsFor: 0, goalsAgainst: 0
+        }
+    };
+
+    db.collection("Teams").doc("currentTeam").set(teamJSON)
+        .then(function () {
+            console.log("Document successfully written!");
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+        });
+}
+
 function initializeTeam() {
     let teamJSON = {
         teamName: "Team XYZ",
@@ -247,6 +266,8 @@ if(window.localStorage.getItem("currentTeam")) {
     currentTeam = new Team(teamJSON);
 }
 
+
+
 //listen to any changes in the team from firebase
 db.collection("Teams").doc("currentTeam")
     .onSnapshot(function(doc) {
@@ -255,18 +276,8 @@ db.collection("Teams").doc("currentTeam")
         window.localStorage.setItem("currentTeam", JSON.stringify(doc.data()));
     });
 
-/*else {
-    let teamJSON = {
-        teamName: "Team XYZ",
-        roster: [],
-        schedule: [],
-        teamStats: {
-            wins: 0, losses: 0, ties: 0, goalsFor: 0, goalsAgainst: 0
-        }
-    };
-    window.localStorage.setItem("Team", JSON.stringify(teamJSON));
-    currentTeam = new Team(teamJSON);
-}*/
+
+
 
 //initialize the current user from the database
 let currentUser = JSON.parse(window.localStorage.getItem("currentUser"));

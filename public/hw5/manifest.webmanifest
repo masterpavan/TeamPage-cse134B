@@ -1,12 +1,12 @@
 {
   "name": "TeamWatch",
   "short_name": "TeamWatch",
-  "start_url": ".",
+  "start_url": "login.html",
   "display": "standalone",
   "background_color": "#fff",
   "description": "A soccer team tracker app.",
   "icons": [{
-    "src": "/images/icons/soccerball200.png",
+    "src": "images/icons/soccerball200.png",
     "sizes": "200x200",
     "type": "image/png"
   }]
