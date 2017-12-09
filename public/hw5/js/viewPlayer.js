@@ -11,6 +11,7 @@ document.querySelector('#assists').innerHTML = currentPlayer.playerStats.assists
 
 let user =  JSON.parse(window.localStorage.getItem("currentUser"));
 if(user.userWho === "Coach") {
-    document.querySelector('#edit1').visible = true;
-    document.querySelector('#edit2').visible = true;
+    console.log(user.userWho);
+    document.querySelector('#edit1').style.display = "";
+    document.querySelector('#edit2').style.display = "";
 } 
