@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb82568f-b7f5-45d2-af3f-2970c52c283f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/hw5/sw.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/hw5/js/main.js" afterPath="$PROJECT_DIR$/public/hw5/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/addGame.html" afterPath="$PROJECT_DIR$/public/hw5/addGame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/addPlayer.html" afterPath="$PROJECT_DIR$/public/hw5/addPlayer.html" />
@@ -9,12 +11,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/editGameButtons.html" afterPath="$PROJECT_DIR$/public/hw5/editGameButtons.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/editGameStats.html" afterPath="$PROJECT_DIR$/public/hw5/editGameStats.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/editPlayer.html" afterPath="$PROJECT_DIR$/public/hw5/editPlayer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/editPlayerButtons.html" afterPath="$PROJECT_DIR$/public/hw5/editPlayerButtons.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/editPlayerStats.html" afterPath="$PROJECT_DIR$/public/hw5/editPlayerStats.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/editTeamStats.html" afterPath="$PROJECT_DIR$/public/hw5/editTeamStats.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/gameSchedule.html" afterPath="$PROJECT_DIR$/public/hw5/gameSchedule.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/homepage.html" afterPath="$PROJECT_DIR$/public/hw5/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/js/addPlayer.js" afterPath="$PROJECT_DIR$/public/hw5/js/addPlayer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/js/editPlayerStats.js" afterPath="$PROJECT_DIR$/public/hw5/js/editPlayerStats.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/login.html" afterPath="$PROJECT_DIR$/public/hw5/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/signUp.html" afterPath="$PROJECT_DIR$/public/hw5/signUp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/manifest.webmanifest" afterPath="$PROJECT_DIR$/public/hw5/manifest.webmanifest" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/viewGameStats.html" afterPath="$PROJECT_DIR$/public/hw5/viewGameStats.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/viewPlayer.html" afterPath="$PROJECT_DIR$/public/hw5/viewPlayer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/hw5/viewPlayers.html" afterPath="$PROJECT_DIR$/public/hw5/viewPlayers.html" />
@@ -31,81 +36,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/hw5/homepage.html">
+      <file leaf-file-name="addPlayer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/hw5/js/addPlayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state relative-caret-position="380">
+              <caret line="28" column="128" lean-forward="false" selection-start-line="28" selection-start-column="128" selection-end-line="28" selection-end-column="128" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameSchedule.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/hw5/gameSchedule.html">
+      <file leaf-file-name="editPlayer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/hw5/js/editPlayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editTeamStats.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/hw5/editTeamStats.html">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/hw5/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+            <state relative-caret-position="182">
+              <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editPlayerStats.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/hw5/editPlayerStats.html">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/hw5/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state relative-caret-position="289">
+              <caret line="59" column="53" lean-forward="false" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editPlayer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/hw5/editPlayer.html">
+      <file leaf-file-name="sw.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/hw5/sw.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state relative-caret-position="-318">
+              <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editGameStats.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/hw5/editGameStats.html">
+      <file leaf-file-name="manifest.webmanifest" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/hw5/manifest.webmanifest">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+            <state relative-caret-position="200">
+              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editGameButtons.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/hw5/editGameButtons.html">
+      <file leaf-file-name="editTeamStats.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/hw5/js/editTeamStats.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state relative-caret-position="280">
+              <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editGame.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/hw5/editGame.html">
+      <file leaf-file-name="editPlayerStats.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/hw5/js/editPlayerStats.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state relative-caret-position="20">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,18 +119,18 @@
       <file leaf-file-name="addPlayer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/hw5/addPlayer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="-1198">
               <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addGame.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addGame.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/hw5/addGame.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            <state relative-caret-position="-911">
+              <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -168,10 +173,6 @@
         <option value="$PROJECT_DIR$/public/hw4/js/editPlayer.js" />
         <option value="$PROJECT_DIR$/public/hw5/js/login.js" />
         <option value="$PROJECT_DIR$/public/hw5/js/editTeamStats.js" />
-        <option value="$PROJECT_DIR$/public/hw5/js/addPlayer.js" />
-        <option value="$PROJECT_DIR$/public/hw5/js/main.js" />
-        <option value="$PROJECT_DIR$/public/hw5/manifest.webmanifest" />
-        <option value="$PROJECT_DIR$/public/hw5/login.html" />
         <option value="$PROJECT_DIR$/public/hw5/signUp.html" />
         <option value="$PROJECT_DIR$/public/hw5/viewGameStats.html" />
         <option value="$PROJECT_DIR$/public/hw5/viewPlayer.html" />
@@ -186,6 +187,14 @@
         <option value="$PROJECT_DIR$/public/hw5/editGame.html" />
         <option value="$PROJECT_DIR$/public/hw5/addPlayer.html" />
         <option value="$PROJECT_DIR$/public/hw5/addGame.html" />
+        <option value="$PROJECT_DIR$/public/hw5/js/addPlayer.js" />
+        <option value="$PROJECT_DIR$/public/hw5/js/editPlayerStats.js" />
+        <option value="$PROJECT_DIR$/public/hw5/js/main.js" />
+        <option value="$PROJECT_DIR$/public/hw5/js/sw.js" />
+        <option value="$PROJECT_DIR$/public/hw5/manifest.webmanifest" />
+        <option value="$PROJECT_DIR$/public/hw5/sw.js" />
+        <option value="$PROJECT_DIR$/public/hw5/main.js" />
+        <option value="$PROJECT_DIR$/public/hw5/login.html" />
       </list>
     </option>
   </component>
@@ -239,35 +248,7 @@
               <item name="TeamPage-cse134B" type="b2602c69:ProjectViewProjectNode" />
               <item name="TeamPage-cse134B" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="hw4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamPage-cse134B" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamPage-cse134B" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="hw4" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamPage-cse134B" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamPage-cse134B" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="hw5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamPage-cse134B" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamPage-cse134B" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="hw5" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeamPage-cse134B" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeamPage-cse134B" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="hw5" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="icons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeamPage-cse134B" type="b2602c69:ProjectViewProjectNode" />
@@ -289,10 +270,13 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/hw5" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pavan\UCSD\cse134b\TeamPage-cse134B\public\hw5" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Pavan\UCSD\cse134b\TeamPage-cse134B\public\hw5\images\icons" />
     </key>
@@ -322,12 +306,12 @@
       <workItem from="1512587429289" duration="1319000" />
       <workItem from="1512614346811" duration="18000" />
       <workItem from="1512614377060" duration="13939000" />
-      <workItem from="1512765341160" duration="5187000" />
+      <workItem from="1512765341160" duration="8441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20463000" />
+    <option name="totallyTimeSpent" value="23717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
@@ -388,40 +372,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/hw5/js/signup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="68" column="39" lean-forward="true" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
-          <folding>
-            <marker date="1512621888868" expanded="true" signature="326:507" ph="/*...*/" />
-            <marker date="1512621888868" expanded="true" signature="531:794" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="825:863" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="865:1893" ph="/*...*/" />
-            <marker date="1512621888868" expanded="true" signature="1967:3266" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2021:3264" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2199:2745" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2240:2468" ph="{&quot;username&quot;: username.value...}" />
-            <marker date="1512621888868" expanded="true" signature="2492:2637" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2661:2733" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2769:3256" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2921:3000" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="3058:3132" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="3150:3246" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/hw5/js/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1512614427151" expanded="true" signature="495:793" ph="{...}" />
-            <marker date="1512614427151" expanded="true" signature="831:1089" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/hw5/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1960">
@@ -457,43 +407,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/hw5/js/App.js" />
-    <entry file="file://$PROJECT_DIR$/public/hw5/js/addGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding>
-            <marker date="1512624814571" expanded="true" signature="24:219" ph="{...}" />
-            <marker date="1512624814571" expanded="true" signature="250:413" ph="{...}" />
-            <marker date="1512624814571" expanded="true" signature="489:1213" ph="{...}" />
-            <marker date="1512624814571" expanded="true" signature="543:1211" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/hw5/js/editGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2620">
-          <caret line="131" column="67" lean-forward="false" selection-start-line="131" selection-start-column="67" selection-end-line="131" selection-end-column="67" />
-          <folding>
-            <marker date="1512624814602" expanded="true" signature="255:2288" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="524:735" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="770:816" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="898:1842" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="960:1836" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="1927:2284" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="2332:5989" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="2365:2649" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="2398:2642" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="2770:4372" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="4430:5291" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="4556:5282" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="4671:4841" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="4741:4827" ph="{...}" />
-            <marker date="1512624814602" expanded="true" signature="5371:5984" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/hw5/js/homepage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -510,20 +423,20 @@
         <state relative-caret-position="1360">
           <caret line="68" column="39" lean-forward="false" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
           <folding>
-            <marker date="1512621888868" expanded="true" signature="326:507" ph="/*...*/" />
-            <marker date="1512621888868" expanded="true" signature="531:794" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="825:863" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="865:1893" ph="/*...*/" />
-            <marker date="1512621888868" expanded="true" signature="1967:3266" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2021:3264" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2199:2745" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2240:2468" ph="{&quot;username&quot;: username.value...}" />
-            <marker date="1512621888868" expanded="true" signature="2492:2637" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2661:2733" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2769:3256" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="2921:3000" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="3058:3132" ph="{...}" />
-            <marker date="1512621888868" expanded="true" signature="3150:3246" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="326:507" ph="/*...*/" />
+            <marker date="1512775803560" expanded="true" signature="531:794" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="825:863" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="865:1120" ph="/*...*/" />
+            <marker date="1512775803560" expanded="true" signature="1967:3266" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="2021:3264" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="2199:2745" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="2240:2468" ph="{&quot;username&quot;: username.value...}" />
+            <marker date="1512775803560" expanded="true" signature="2492:2637" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="2661:2733" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="2769:3256" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="2921:3000" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="3058:3132" ph="{...}" />
+            <marker date="1512775803560" expanded="true" signature="3150:3246" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -640,57 +553,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/hw5/js/addPlayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="28" column="54" lean-forward="false" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/hw5/js/editPlayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/hw5/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="112" column="37" lean-forward="false" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/hw5/js/editTeamStats.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="69" lean-forward="false" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/hw5/images/icons/soccerball200.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/hw5/manifest.webmanifest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/hw5/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="55" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/hw5/signUp.html">
@@ -761,7 +626,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-          <folding />
+          <folding>
+            <marker date="1512777926291" expanded="true" signature="1496:3481" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="1541:1697" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="1742:1899" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="1944:2108" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="2153:2313" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="2358:2514" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="2559:2951" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="2648:2932" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="2986:3212" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="3672:4125" ph="..." />
+            <marker date="1512777926291" expanded="true" signature="3718:4044" ph="{&quot;apiKey&quot;: &quot;AIzaSyAVYxO1dnjF1aekXilexIzzxYtR7RVRCG4&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -789,9 +666,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/js/addGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/js/editGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1180">
+          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/js/editTeamStats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/js/editPlayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/js/editPlayerStats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/js/addPlayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="28" column="128" lean-forward="false" selection-start-line="28" selection-start-column="128" selection-end-line="28" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/hw5/addPlayer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="-1198">
           <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
           <folding />
         </state>
@@ -799,8 +724,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/hw5/addGame.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        <state relative-caret-position="-911">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/manifest.webmanifest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/sw.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-318">
+          <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/hw5/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="59" column="53" lean-forward="false" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
           <folding />
         </state>
       </provider>

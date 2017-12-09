@@ -1,3 +1,5 @@
+let currentPlyr = JSON.parse(window.localStorage.getItem('currentPlayer'));
+
 document.querySelector('#goals').value = currentPlayer.goals;
 document.querySelector('#assists').value = currentPlayer.assists;
 document.querySelector('#fouls').value = currentPlayer.fouls;
