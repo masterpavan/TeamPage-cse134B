@@ -35,10 +35,6 @@ if (currentUser.userWho === "Coach") {
 	document.querySelector('#addBtn').innerHTML =`<a href="addPlayer.html"><button class="btn">Add</button></a>`;
 }
 
-if (currentUser.userWho === "Coach" && numPlayers > 0) {
-	document.querySelector('#editBtn').visible = true;
-}
-
 function addClickEvent(id){
     document.querySelector(`.${id}`).addEventListener('click', function() {
         let index = currentTeam.roster.findPlayerIndex(id);
