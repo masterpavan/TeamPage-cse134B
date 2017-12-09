@@ -27,18 +27,34 @@ class Team {
         console.log("saved to localstorage");
     }
 
-    async saveToFirebase() {
+    saveToFirebase() {
         let teamJSON = {
             teamName: this.teamName,
             roster: this.roster.playersArray,
             schedule: this.schedule.gamesArray,
             teamStats: this.teamStats
         };
+
         console.log('saving to firebase: ', teamJSON);
         // Create a reference to the team doc
         let teamDocRef = db.collection("Teams").doc("currentTeam");
 
-        await teamDocRef.update(teamJSON);
+        teamDocRef.update(teamJSON)
+            .then(function() {
+                console.log("Document successfully updated!");
+            })
+            .catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+
+        window.localStorage.setItem("currentTeam", JSON.stringify(teamJSON));
+
+        return new Promise(function(resolve) {
+            resolve();
+        });
+
+
 
     }
 
@@ -272,7 +288,7 @@ if(window.localStorage.getItem("currentTeam")) {
 db.collection("Teams").doc("currentTeam")
     .onSnapshot(function(doc) {
         console.log("We just got some realtime updates: ", doc && doc.data());
-        console.log("Updating local team.")
+        console.log("Updating local team.");
         window.localStorage.setItem("currentTeam", JSON.stringify(doc.data()));
     });
 

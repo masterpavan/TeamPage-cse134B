@@ -4,10 +4,36 @@
   "start_url": "login.html",
   "display": "standalone",
   "background_color": "#fff",
+  "theme_color": "#0275d8",
   "description": "A soccer team tracker app.",
   "icons": [{
-    "src": "images/icons/soccerball200.png",
-    "sizes": "200x200",
-    "type": "image/png"
-  }]
+      "src": "images/icons/soccerball16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/soccerball32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/soccerball64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/soccerball128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/soccerball256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/soccerball512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }]
 }

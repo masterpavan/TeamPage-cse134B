@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#0275d8">
     <title>Login</title>
 
     <link rel="stylesheet" href="localcss.css">
-    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
 
@@ -38,6 +39,7 @@
 </div>
 <script src="firebase-app.js"></script>
 <script src="firebase-auth.js"></script>
+<script src="firebase-database.js"></script>
 <script src="firebase-firestore.js"></script>
 <script>
   // Initialize Firebase
@@ -51,6 +53,28 @@
   };
   firebase.initializeApp(config);
   var db = firebase.firestore();
+  console.log("database is:",db);
+
+  //enable offline persistence
+  firebase.firestore().enablePersistence()
+      .then(function() {
+          // Initialize Cloud Firestore through firebase
+          db = firebase.firestore();
+          console.log("enabled persistence.")
+      })
+      .catch(function(err) {
+          if (err.code == 'failed-precondition') {
+              console.error("only one tab at a time");
+              // Multiple tabs open, persistence can only be enabled
+              // in one tab at a a time.
+              // ...
+          } else if (err.code == 'unimplemented') {
+              console.error("no browser support");
+              // The current browser does not support all of the
+              // features required to enable persistence
+              // ...
+          }
+      });
 
   //register the service worker
   if ('serviceWorker' in navigator) {

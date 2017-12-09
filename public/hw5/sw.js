@@ -10,6 +10,7 @@ const cacheFiles = [
     'addPlayer.html',
     'editGame.html',
     'editGameButtons.html',
+    'editGameStats.html',
     'editPlayer.html',
     'editPlayerStats.html',
     'editTeamStats.html',
@@ -20,13 +21,19 @@ const cacheFiles = [
     // CSS Files
     'localcss.css',
     // Image Files
-    'images/icons/soccerball200.png',
+    'images/icons/soccerball16.png',
+    'images/icons/soccerball32.png',
+    'images/icons/soccerball64.png',
+    'images/icons/soccerball128.png',
+    'images/icons/soccerball256.png',
+    'images/icons/soccerball512.png',
     '/res/soccerball.png',
     // JS Files
     'sw.js',
     'main.js',
     'firebase-app.js',
     'firebase-auth.js',
+    'firebase-database.js',
     'firebase-firestore.js',
     'js/addGame.js',
     'js/addPlayer.js',

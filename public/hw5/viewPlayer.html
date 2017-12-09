@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>View Player</title>
-  <link rel="stylesheet" href="localcss.css">
-    <link rel="manifest" href="./manifest.webmanifest">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#0275d8">
+    <title>View Player</title>
+    <link rel="stylesheet" href="localcss.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <style>
 
-    .noForm p {
-      display: inline-block;
-    }
+        .noForm p {
+            display: inline-block;
+        }
 
-    .noForm .label {
-      width: 30vw;
-      text-align: right;
-      font-weight: bold;
-        padding: 0 1rem;
-    }
+        .noForm .label {
+            width: 30vw;
+            text-align: right;
+            font-weight: bold;
+            padding: 0 1rem;
+        }
 
-    .noForm .input {
-      width: 30vw;
-      text-align: left;
-        padding: 0 1rem;
-    }
- 
-  </style>
+        .noForm .input {
+            width: 30vw;
+            text-align: left;
+            padding: 0 1rem;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -93,6 +94,7 @@
 
 <script src="firebase-app.js"></script>
 <script src="firebase-auth.js"></script>
+<script src="firebase-database.js"></script>
 <script src="firebase-firestore.js"></script>
 <script>
     // Initialize Firebase
@@ -106,6 +108,47 @@
     };
     firebase.initializeApp(config);
     var db = firebase.firestore();
+    console.log("database is:",db);
+
+    //enable offline persistence
+    firebase.firestore().enablePersistence()
+        .then(function() {
+            // Initialize Cloud Firestore through firebase
+            db = firebase.firestore();
+            console.log("enabled persistence.")
+        })
+        .catch(function(err) {
+            if (err.code == 'failed-precondition') {
+                console.error("only one tab at a time");
+                // Multiple tabs open, persistence can only be enabled
+                // in one tab at a a time.
+                // ...
+            } else if (err.code == 'unimplemented') {
+                console.error("no browser support");
+                // The current browser does not support all of the
+                // features required to enable persistence
+                // ...
+            }
+        });
+
+    //register the service worker
+    if ('serviceWorker' in navigator) {
+        try {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    // Register the service worker passing our service worker code
+                    navigator.serviceWorker.register('./sw.js').then((registration) => {
+                        // Registration was successful
+                        console.log('ServiceWorker registration successful!', registration.scope);
+                    }, (err) => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+        } catch (e) {
+            console.log(e) // Probably want to use some free JS error tracking tool here like Sentry
+        }
+    }
 </script>
 <script src="main.js"></script>
 <script src="js/viewPlayer.js"></script>
