@@ -26,7 +26,7 @@ document.querySelector('#addPlayer').addEventListener('click', function() {
                 let check = document.querySelector('#captain');
                 let captain = check.value;
 
-                let playerObject = currentTeam.roster.createPlayerObject(fName, lName, email, dob, jersey, position, captain);
+                let playerObject = currentTeam.roster.createPlayerObject(fName, lName, email, dob, jersey, position, captain, null);
                 currentTeam.roster.addPlayer(playerObject);
                 currentTeam.saveToFirebase().then(()=>{document.querySelector('#toPlayerRoster').click()});
         }

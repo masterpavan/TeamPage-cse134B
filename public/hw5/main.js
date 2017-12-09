@@ -100,6 +100,13 @@ class Roster {
 
     //create playerObject
     createPlayerObject(fName, lName, email, dob, jersey, position, captain, playerStats) {
+        if(!playerStats) playerStats = {
+            goals: 0,
+            assists: 0,
+            fouls: 0,
+            yellow: 0,
+            red: 0
+        };
         return {
             id : fName + lName + jersey,
             removed : false,
@@ -114,34 +121,6 @@ class Roster {
         }
     }
 
-}
-
-class Player {
-    constructor(fName, lName, email, dob, jersey, position, captain) {
-        this.id = fName + lName + jersey;
-        this.removed = false;
-        this.playerFName = fName;
-        this.playerLName = lName;
-        this.playerEmail = email;
-        this.playerBDay = dob;
-        this.playerNumber = jersey;
-        this.position = position;
-        this.captain = captain;
-        this.goals = 0;
-        this.assists = 0;
-        this.fouls = 0;
-        this.yellow = 0;
-        this.red = 0;
-        this.gamesPlayed = 0;
-    }
-
-    updateStats(goals, assists, fouls, yellow, red) {
-        this.goals = goals;
-        this.assists = assists;
-        this.fouls = fouls;
-	this.yellow = yellow;
-	this.red = red;
-    }
 }
 
 class Schedule {
@@ -260,7 +239,7 @@ function changeUserPrivledge(user) {
     console.log(`changed ${currentUser.username} to ${user}`);
 }
 
-//initialize the team from the database
+//initialize the team from localstorage
 let currentTeam = undefined;
 
 if(window.localStorage.getItem("currentTeam")) {
